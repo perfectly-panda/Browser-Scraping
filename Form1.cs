@@ -30,13 +30,14 @@ namespace Browser
 
         private void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
+            WebPage = null;
 
-                WebPage = new WebPage(webBrowser1.DocumentText);
+            WebPage = new WebPage(webBrowser1);
 
-                LinkCount.Text = webBrowser1.Document.Links.Count.ToString();
-                WordCount.Text = WebPage.WordCount().ToString();
-                textBox3.Text = webBrowser1.Document.Body.InnerHtml;
-                textBox2.Text = webBrowser1.Url.ToString();
+            LinkCount.Text = WebPage.Links.Count.ToString();
+            WordCount.Text = WebPage.WordCount().ToString();
+            textBox3.Text = WebPage.ToString();
+            textBox2.Text = WebPage.Url.ToString();
 
 
         }
@@ -61,22 +62,28 @@ namespace Browser
         {
             if(WebPage != null)
             {
-                textBox3.Text = WebPage.OriginalDocument.ToString();
+                textBox3.Text = WebPage.ToString();
             }
         }
 
         private void button3_Click(object sender, EventArgs e)
         {
-            if (webBrowser1.Document != null)
+            if (WebPage != null)
             {
                 StringBuilder sb = new StringBuilder();
 
-                var links = webBrowser1.Document.Links;
+                var links = WebPage.Links;
 
-                foreach (HtmlElement link in links)
+                foreach (HtmlAgilityPack.HtmlNode link in links)
                 {
-                    sb.Append(link.GetAttribute("href"));
-                    sb.AppendLine();
+                    var href = link.Attributes.Where(a => a.Name == "href").FirstOrDefault();
+
+                    if(href != null)
+                    {
+                        sb.Append(href.Value);
+                        sb.AppendLine();
+                    }
+                    
                 }
 
                 textBox3.Text = sb.ToString();

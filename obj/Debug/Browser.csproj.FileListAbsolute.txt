@@ -13,3 +13,15 @@ c:\users\samara\documents\visual studio 2015\Projects\Browser\Browser\bin\Debug\
 C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\Browser.exe.config
 C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\obj\Debug\Browser.exe
 C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\obj\Debug\Browser.pdb
+D:\Browser-Scraping\bin\Debug\Browser.exe.config
+D:\Browser-Scraping\obj\Debug\Browser.csprojResolveAssemblyReference.cache
+D:\Browser-Scraping\obj\Debug\Browser.Form1.resources
+D:\Browser-Scraping\obj\Debug\Browser.Properties.Resources.resources
+D:\Browser-Scraping\obj\Debug\Browser.csproj.GenerateResource.Cache
+D:\Browser-Scraping\bin\Debug\Browser.exe
+D:\Browser-Scraping\bin\Debug\Browser.pdb
+D:\Browser-Scraping\bin\Debug\HtmlAgilityPack.dll
+D:\Browser-Scraping\bin\Debug\HtmlAgilityPack.pdb
+D:\Browser-Scraping\bin\Debug\HtmlAgilityPack.xml
+D:\Browser-Scraping\obj\Debug\Browser.exe
+D:\Browser-Scraping\obj\Debug\Browser.pdb
