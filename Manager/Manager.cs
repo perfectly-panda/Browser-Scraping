@@ -13,9 +13,9 @@ namespace Manager
 {
     public class ApplicationManager
     {
-        public async Task<WebPage> ReceiveWebPage(WebBrowser webBrowser)
+        public async Task<Parser.WebPage> ReceiveWebPage(WebBrowser webBrowser)
         {
-            WebPage webPage =  new WebPage();
+            Parser.WebPage webPage =  new Parser.WebPage();
 
             List<IgnoreList> ignoreList = await IgnoreListRepository.GetIgnoreList();
 

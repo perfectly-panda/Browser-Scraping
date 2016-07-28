@@ -6,9 +6,8 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Models
 {
-    public class Keywords
+    public class SubDomain
     {
         public Guid Id { get; set; }
-        public Website Website { get; set; }
     }
 }

@@ -16,7 +16,6 @@ namespace DataAccess.Migrations
         protected override void Seed(DataAccess.WebsiteDataContext context)
         {
             context.IgnoreList.AddOrUpdate(
-                  p => p,
                   new IgnoreList { Id= Guid.NewGuid(), Value = "the" }
                 );
         }

@@ -7,13 +7,13 @@ namespace DataAccess.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class addIgnoreList : IMigrationMetadata
+    public sealed partial class addModels : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addIgnoreList));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(addModels));
         
         string IMigrationMetadata.Id
         {
-            get { return "201607281840072_addIgnoreList"; }
+            get { return "201607282203098_addModels"; }
         }
         
         string IMigrationMetadata.Source

@@ -51,18 +51,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201607281501297_initialcreate.cs" />
-    <Compile Include="Migrations\201607281501297_initialcreate.Designer.cs">
-      <DependentUpon>201607281501297_initialcreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201607281840072_addIgnoreList.cs" />
-    <Compile Include="Migrations\201607281840072_addIgnoreList.Designer.cs">
-      <DependentUpon>201607281840072_addIgnoreList.cs</DependentUpon>
+    <Compile Include="Migrations\201607282203098_addModels.cs" />
+    <Compile Include="Migrations\201607282203098_addModels.Designer.cs">
+      <DependentUpon>201607282203098_addModels.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
+    <Compile Include="Models\CalculatedTableUpdates.cs" />
     <Compile Include="Models\IgnoreList.cs" />
-    <Compile Include="Models\Keywords.cs" />
+    <Compile Include="Models\Keyword.cs" />
+    <Compile Include="Models\RelatedKeywords.cs" />
+    <Compile Include="Models\WebPageKeywords.cs" />
+    <Compile Include="Models\SubDomain.cs" />
+    <Compile Include="Models\WebPage.cs" />
     <Compile Include="Models\Website.cs" />
+    <Compile Include="Models\WebSiteKeywords.cs" />
     <Compile Include="Repository\IgnoreListRepository.cs" />
     <Compile Include="WebsiteData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -75,11 +77,8 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201607281501297_initialcreate.resx">
-      <DependentUpon>201607281501297_initialcreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607281840072_addIgnoreList.resx">
-      <DependentUpon>201607281840072_addIgnoreList.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201607282203098_addModels.resx">
+      <DependentUpon>201607282203098_addModels.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
