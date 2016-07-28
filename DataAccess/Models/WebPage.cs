@@ -13,5 +13,7 @@ namespace DataAccess.Models
         public Website Website { get; set; }
 
         public SubDomain SubDomain { get; set; }
+
+        public DateTime LastAccessed { get; set; }
     }
 }
