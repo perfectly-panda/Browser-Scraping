@@ -31,15 +31,11 @@
             this.webBrowser1 = new System.Windows.Forms.WebBrowser();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox2 = new System.Windows.Forms.TextBox();
-            this.LinkCount = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.WordCount = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
             this.webBrowser2 = new System.Windows.Forms.WebBrowser();
+            this.LogView = new System.Windows.Forms.ListBox();
+            this.IgnoreListEntry = new System.Windows.Forms.TextBox();
+            this.addignore = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // webBrowser1
@@ -50,6 +46,7 @@
             this.webBrowser1.ScriptErrorsSuppressed = true;
             this.webBrowser1.Size = new System.Drawing.Size(641, 486);
             this.webBrowser1.TabIndex = 0;
+            this.webBrowser1.Url = new System.Uri("http://google.com", System.UriKind.Absolute);
             this.webBrowser1.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser1_DocumentCompleted);
             // 
             // textBox1
@@ -70,16 +67,6 @@
             this.button1.UseVisualStyleBackColor = true;
             this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
-            // textBox3
-            // 
-            this.textBox3.Location = new System.Drawing.Point(756, 331);
-            this.textBox3.Multiline = true;
-            this.textBox3.Name = "textBox3";
-            this.textBox3.ReadOnly = true;
-            this.textBox3.ScrollBars = System.Windows.Forms.ScrollBars.Vertical;
-            this.textBox3.Size = new System.Drawing.Size(654, 286);
-            this.textBox3.TabIndex = 4;
-            // 
             // textBox2
             // 
             this.textBox2.Location = new System.Drawing.Point(48, 96);
@@ -87,60 +74,6 @@
             this.textBox2.ReadOnly = true;
             this.textBox2.Size = new System.Drawing.Size(925, 22);
             this.textBox2.TabIndex = 5;
-            // 
-            // LinkCount
-            // 
-            this.LinkCount.Location = new System.Drawing.Point(923, 131);
-            this.LinkCount.Name = "LinkCount";
-            this.LinkCount.ReadOnly = true;
-            this.LinkCount.Size = new System.Drawing.Size(487, 22);
-            this.LinkCount.TabIndex = 6;
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(756, 131);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(75, 17);
-            this.label1.TabIndex = 7;
-            this.label1.Text = "Link Count";
-            // 
-            // button2
-            // 
-            this.button2.Location = new System.Drawing.Point(759, 294);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 8;
-            this.button2.Text = "HTML";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
-            // 
-            // button3
-            // 
-            this.button3.Location = new System.Drawing.Point(856, 293);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
-            this.button3.TabIndex = 9;
-            this.button3.Text = "Links";
-            this.button3.UseVisualStyleBackColor = true;
-            this.button3.Click += new System.EventHandler(this.button3_Click);
-            // 
-            // WordCount
-            // 
-            this.WordCount.Location = new System.Drawing.Point(923, 159);
-            this.WordCount.Name = "WordCount";
-            this.WordCount.ReadOnly = true;
-            this.WordCount.Size = new System.Drawing.Size(487, 22);
-            this.WordCount.TabIndex = 10;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(759, 159);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(83, 17);
-            this.label2.TabIndex = 11;
-            this.label2.Text = "Word Count";
             // 
             // webBrowser2
             // 
@@ -153,20 +86,43 @@
             this.webBrowser2.Visible = false;
             this.webBrowser2.DocumentCompleted += new System.Windows.Forms.WebBrowserDocumentCompletedEventHandler(this.webBrowser2_DocumentCompleted);
             // 
+            // LogView
+            // 
+            this.LogView.FormattingEnabled = true;
+            this.LogView.HorizontalScrollbar = true;
+            this.LogView.ItemHeight = 16;
+            this.LogView.Location = new System.Drawing.Point(786, 131);
+            this.LogView.Name = "LogView";
+            this.LogView.Size = new System.Drawing.Size(593, 484);
+            this.LogView.TabIndex = 13;
+            // 
+            // IgnoreListEntry
+            // 
+            this.IgnoreListEntry.Location = new System.Drawing.Point(1129, 10);
+            this.IgnoreListEntry.Name = "IgnoreListEntry";
+            this.IgnoreListEntry.Size = new System.Drawing.Size(255, 22);
+            this.IgnoreListEntry.TabIndex = 14;
+            // 
+            // addignore
+            // 
+            this.addignore.Location = new System.Drawing.Point(1129, 39);
+            this.addignore.Name = "addignore";
+            this.addignore.Size = new System.Drawing.Size(122, 30);
+            this.addignore.TabIndex = 15;
+            this.addignore.Text = "Ignore Keyword";
+            this.addignore.UseVisualStyleBackColor = true;
+            this.addignore.Click += new System.EventHandler(this.addignore_Click);
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1453, 620);
+            this.Controls.Add(this.addignore);
+            this.Controls.Add(this.IgnoreListEntry);
+            this.Controls.Add(this.LogView);
             this.Controls.Add(this.webBrowser2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.WordCount);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.label1);
-            this.Controls.Add(this.LinkCount);
             this.Controls.Add(this.textBox2);
-            this.Controls.Add(this.textBox3);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.textBox1);
             this.Controls.Add(this.webBrowser1);
@@ -183,15 +139,11 @@
         private System.Windows.Forms.WebBrowser webBrowser1;
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox LinkCount;
-        private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.TextBox WordCount;
-        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.WebBrowser webBrowser2;
+        private System.Windows.Forms.ListBox LogView;
+        private System.Windows.Forms.TextBox IgnoreListEntry;
+        private System.Windows.Forms.Button addignore;
     }
 }
 

@@ -1,0 +1,16 @@
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\Manager\bin\Debug\Manager.dll
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\Manager\bin\Debug\Manager.pdb
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\Manager\obj\Debug\Manager.csprojResolveAssemblyReference.cache
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\Manager\obj\Debug\Manager.dll
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\Manager\obj\Debug\Manager.pdb
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\Manager\bin\Debug\DataAccess.dll
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\Manager\bin\Debug\Parser.dll
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\Manager\bin\Debug\HtmlAgilityPack.dll
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\Manager\bin\Debug\EntityFramework.dll
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\Manager\bin\Debug\Parser.pdb
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\Manager\bin\Debug\DataAccess.pdb
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\Manager\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\Manager\bin\Debug\HtmlAgilityPack.xml
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\Manager\bin\Debug\EntityFramework.xml
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\Manager\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\Manager\bin\Debug\EntityFramework.SqlServer.xml

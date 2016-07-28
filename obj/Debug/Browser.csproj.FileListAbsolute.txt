@@ -25,3 +25,29 @@ D:\Browser-Scraping\bin\Debug\HtmlAgilityPack.pdb
 D:\Browser-Scraping\bin\Debug\HtmlAgilityPack.xml
 D:\Browser-Scraping\obj\Debug\Browser.exe
 D:\Browser-Scraping\obj\Debug\Browser.pdb
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\Browser.exe
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\Browser.pdb
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\HtmlAgilityPack.dll
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\Manager.dll
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\Parser.dll
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\Parser.pdb
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\Manager.pdb
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\HtmlAgilityPack.pdb
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\HtmlAgilityPack.xml
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\obj\Debug\Browser.csprojResolveAssemblyReference.cache
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\obj\Debug\Browser.Form1.resources
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\obj\Debug\Browser.Properties.Resources.resources
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\obj\Debug\Browser.csproj.GenerateResource.Cache
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\DataAccess.dll
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\EntityFramework.dll
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\DataAccess.pdb
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\EntityFramework.xml
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\Microsoft.AspNet.Scaffolding.EntityFramework.12.0.dll
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\Microsoft.AspNet.Scaffolding.12.0.dll
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\EnvDTE.dll
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\EnvDTE80.dll
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\stdole.dll
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\Microsoft.AspNet.Scaffolding.EntityFramework.12.0.xml
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\Microsoft.AspNet.Scaffolding.12.0.xml
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\EntityFramework.SqlServer.xml

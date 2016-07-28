@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Manager;
+using System.Threading;
 
 namespace Browser
 {
@@ -14,9 +16,11 @@ namespace Browser
         [STAThread]
         static void Main()
         {
+            ApplicationManager manager = new ApplicationManager();
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+            Form1 form = new Form1(manager);
+            Application.Run(form);
         }
     }
 }
