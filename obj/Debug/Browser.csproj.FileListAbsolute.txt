@@ -1,0 +1,15 @@
+c:\users\samara\documents\visual studio 2015\Projects\Browser\Browser\bin\Debug\Browser.exe.config
+c:\users\samara\documents\visual studio 2015\Projects\Browser\Browser\bin\Debug\Browser.exe
+c:\users\samara\documents\visual studio 2015\Projects\Browser\Browser\bin\Debug\Browser.pdb
+c:\users\samara\documents\visual studio 2015\Projects\Browser\Browser\obj\Debug\Browser.csprojResolveAssemblyReference.cache
+c:\users\samara\documents\visual studio 2015\Projects\Browser\Browser\obj\Debug\Browser.Form1.resources
+c:\users\samara\documents\visual studio 2015\Projects\Browser\Browser\obj\Debug\Browser.Properties.Resources.resources
+c:\users\samara\documents\visual studio 2015\Projects\Browser\Browser\obj\Debug\Browser.csproj.GenerateResource.Cache
+c:\users\samara\documents\visual studio 2015\Projects\Browser\Browser\obj\Debug\Browser.exe
+c:\users\samara\documents\visual studio 2015\Projects\Browser\Browser\obj\Debug\Browser.pdb
+c:\users\samara\documents\visual studio 2015\Projects\Browser\Browser\bin\Debug\HtmlAgilityPack.dll
+c:\users\samara\documents\visual studio 2015\Projects\Browser\Browser\bin\Debug\HtmlAgilityPack.pdb
+c:\users\samara\documents\visual studio 2015\Projects\Browser\Browser\bin\Debug\HtmlAgilityPack.xml
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\Browser.exe.config
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\obj\Debug\Browser.exe
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\obj\Debug\Browser.pdb
