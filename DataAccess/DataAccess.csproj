@@ -51,7 +51,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Class1.cs" />
     <Compile Include="Migrations\201607281501297_initialcreate.cs" />
     <Compile Include="Migrations\201607281501297_initialcreate.Designer.cs">
       <DependentUpon>201607281501297_initialcreate.cs</DependentUpon>
