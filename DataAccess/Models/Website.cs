@@ -9,6 +9,6 @@ namespace DataAccess.Models
     public class Website
     {
         public Guid Id { get; set; }
-        public String URL { get; set; }
+        public String Domain { get; set; }
     }
 }

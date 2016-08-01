@@ -9,5 +9,7 @@ namespace DataAccess.Models
     public class SubDomain
     {
         public Guid Id { get; set; }
+        public string Domain { get; set; }
+        public Website Website { get; set; }
     }
 }

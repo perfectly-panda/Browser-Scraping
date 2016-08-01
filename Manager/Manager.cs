@@ -24,6 +24,11 @@ namespace Manager
             webPage.Keywords = TextList.CreateKeywordList(webPage.TextAsList, ignoreList);
             webPage.PageType = PageTyping.FindPageType(webPage);
 
+            SaveData save = new SaveData(webPage);
+
+            var result = await save.SaveDomain();
+            result = await save.SaveSubDomain();
+
             return webPage;
         }
 

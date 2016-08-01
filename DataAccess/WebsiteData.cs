@@ -19,7 +19,7 @@ namespace DataAccess
         public virtual DbSet<SubDomain> SubDomain { get; set; }
         public virtual DbSet<WebPage> WebPage { get; set; }
         public virtual DbSet<WebPageKeywords> WebPageKeywords { get; set; } 
-        public virtual DbSet<WebSiteKeywords> WebSiteKeywords { get; set; }
+        public virtual DbSet<WebsiteKeywords> WebSiteKeywords { get; set; }
         public virtual DbSet<CalculatedTableUpdates> CalculatedTableUpdates { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)

@@ -59,6 +59,18 @@
     <Compile Include="Migrations\201607282228175_addTimeStamp.Designer.cs">
       <DependentUpon>201607282228175_addTimeStamp.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201608011846187_websitechanges.cs" />
+    <Compile Include="Migrations\201608011846187_websitechanges.Designer.cs">
+      <DependentUpon>201608011846187_websitechanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608011922505_subdomainchanges.cs" />
+    <Compile Include="Migrations\201608011922505_subdomainchanges.Designer.cs">
+      <DependentUpon>201608011922505_subdomainchanges.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608011925594_subdomainFK.cs" />
+    <Compile Include="Migrations\201608011925594_subdomainFK.Designer.cs">
+      <DependentUpon>201608011925594_subdomainFK.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CalculatedTableUpdates.cs" />
     <Compile Include="Models\IgnoreList.cs" />
@@ -68,8 +80,9 @@
     <Compile Include="Models\SubDomain.cs" />
     <Compile Include="Models\WebPage.cs" />
     <Compile Include="Models\Website.cs" />
-    <Compile Include="Models\WebSiteKeywords.cs" />
+    <Compile Include="Models\WebsiteKeywords.cs" />
     <Compile Include="Repository\IgnoreListRepository.cs" />
+    <Compile Include="Repository\WebsiteRepository.cs" />
     <Compile Include="WebsiteData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -86,6 +99,15 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201607282228175_addTimeStamp.resx">
       <DependentUpon>201607282228175_addTimeStamp.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608011846187_websitechanges.resx">
+      <DependentUpon>201608011846187_websitechanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608011922505_subdomainchanges.resx">
+      <DependentUpon>201608011922505_subdomainchanges.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608011925594_subdomainFK.resx">
+      <DependentUpon>201608011925594_subdomainFK.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

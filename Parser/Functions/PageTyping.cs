@@ -22,7 +22,7 @@ namespace Parser.Functions
         {
             var path = webPage.Url.AbsolutePath;
 
-            if (GetSubdomain(webPage.Url.Host) != "" && GetSubdomain(webPage.Url.Host) != "www") return false;
+            if (webPage.SubDomain != "" && webPage.SubDomain != "www") return false;
 
             if (path == "/") return true;
             if (path.StartsWith("/index")) return true;
@@ -37,7 +37,7 @@ namespace Parser.Functions
 
             if (path == "/blog") return true;
 
-            if (GetSubdomain(webPage.Url.Host) == "blog" && path == "/") return true;
+            if (webPage.SubDomain == "blog" && path == "/") return true;
 
             if (webPage.Url.Segments.Last().Contains("blog") && webPage.Url.Segments.Last().Length <= 20) return true;
 
@@ -50,18 +50,10 @@ namespace Parser.Functions
 
             if (path != "/blog" && path.StartsWith("/blog")) return true;
             if (webPage.Url.Segments.Last().Contains("blog") && webPage.Url.Segments.Last().Length > 20) return true;
-            if (GetSubdomain(webPage.Url.Host) == "blog" && path != "/") return true;
+            if (webPage.SubDomain == "blog" && path != "/") return true;
 
             return false;
         }
 
-        private static string GetSubdomain(string domain)
-        {
-            var subdomain = "";
-            int index = domain.IndexOf(".");
-            if (index > 0)
-                subdomain = domain.Substring(0, index);
-            return subdomain;
-        }
     }
 }

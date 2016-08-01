@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Models
 {
-    public class WebSiteKeywords
+    public class WebsiteKeywords
     {
         public Guid Id { get; set; }
         public Website WebSite { get; set; }
