@@ -9,7 +9,7 @@ namespace Parser
     public enum PageType
     {
         HomePage,
-        OtherPage,
+        Page,
         BlogHomePage,
         BlogPage,
         ContactPage,

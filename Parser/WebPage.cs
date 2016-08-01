@@ -84,6 +84,9 @@ namespace Parser
                 Headers.Add("H"+i, nodes);
             }
 
+            var bold = this.OriginalDocument.DocumentNode.Descendants().Where(n => n.Name.ToLower() == "b").ToList();
+
+            Headers.Add("B", bold);
         }
 
         public override string ToString()

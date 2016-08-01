@@ -4,10 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Windows.Forms;
 using System.Text.RegularExpressions;
-using Parser;
 using System.Collections.Generic;
 using System.ComponentModel;
 using Manager;
+using Parser;
 
 namespace Browser
 {
@@ -51,6 +51,7 @@ namespace Browser
                 textBox2.Text = webPage.Url.ToString();
 
                 EventLog.AppendLog("Processing Complete");
+                EventLog.AppendLog("Title: " + webPage.PageTitle);
                 EventLog.AppendLog("Domain: " + webPage.Domain);
                 EventLog.AppendLog("URL: " + webPage.Url);
                 EventLog.AppendLog("Links: " + webPage.Links.Count());
@@ -66,6 +67,8 @@ namespace Browser
                 var topKeywords = String.Join(", ", webPage.Keywords.Take(5));
 
                 EventLog.AppendLog("Top Keywords: " + topKeywords);
+
+                EventLog.AppendLog("Page Type: " + webPage.PageType.ToString());
 
                 button1.Enabled = true;
             }

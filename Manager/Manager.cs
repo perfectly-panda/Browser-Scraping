@@ -22,7 +22,7 @@ namespace Manager
             webPage.TextAsList = TextList.CreateTextList(webPage.InjectedDocument);
             webPage.BlogLink = Navigation.BlogLink(webPage.Links);
             webPage.Keywords = TextList.CreateKeywordList(webPage.TextAsList, ignoreList);
-            webPage.PageType = PageTyping.FindPageType(webPage.OriginalDocument);
+            webPage.PageType = PageTyping.FindPageType(webPage);
 
             return webPage;
         }
