@@ -10,6 +10,6 @@ namespace DataAccess.Models
     {
         public Guid Id { get; set; }
 
-        string Value { get; set; }
+        public string Value { get; set; }
     }
 }

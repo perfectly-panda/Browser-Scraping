@@ -71,6 +71,10 @@
     <Compile Include="Migrations\201608011925594_subdomainFK.Designer.cs">
       <DependentUpon>201608011925594_subdomainFK.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201608011952084_keywordsInitial.cs" />
+    <Compile Include="Migrations\201608011952084_keywordsInitial.Designer.cs">
+      <DependentUpon>201608011952084_keywordsInitial.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CalculatedTableUpdates.cs" />
     <Compile Include="Models\IgnoreList.cs" />
@@ -82,6 +86,7 @@
     <Compile Include="Models\Website.cs" />
     <Compile Include="Models\WebsiteKeywords.cs" />
     <Compile Include="Repository\IgnoreListRepository.cs" />
+    <Compile Include="Repository\KeywordRepository.cs" />
     <Compile Include="Repository\WebsiteRepository.cs" />
     <Compile Include="WebsiteData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -108,6 +113,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201608011925594_subdomainFK.resx">
       <DependentUpon>201608011925594_subdomainFK.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608011952084_keywordsInitial.resx">
+      <DependentUpon>201608011952084_keywordsInitial.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

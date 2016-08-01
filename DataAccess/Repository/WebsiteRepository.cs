@@ -29,6 +29,7 @@ namespace DataAccess.Repository
 
                         return await db.SaveChangesAsync();
                     }
+                    return 0;
                 }
                 catch
                 {

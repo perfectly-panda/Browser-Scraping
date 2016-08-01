@@ -24,19 +24,34 @@ namespace Manager
 
         public async Task<int> SaveDomain()
         {
-            var domain = this.WebPage.Domain;
-
-            if (this.WebPage.SubDomain != "")
-            {
-                domain = domain.Replace(this.WebPage.SubDomain + ".", "");
-            }
-
-            return await WebsiteRepository.AddWebsite(domain);
+            return await WebsiteRepository.AddWebsite(this.CleanDomain);
         }
 
         public async Task<int> SaveSubDomain()
         {
             if (!String.IsNullOrWhiteSpace(this.WebPage.SubDomain))
+            {
+                return await WebsiteRepository.AddSubDomain(this.WebPage.SubDomain, this.CleanDomain);
+            }
+            else
+            {
+                return 0;
+            }
+
+        }
+
+        public async Task<int> SaveKeywords(int count)
+        {
+            var keywords = this.WebPage.Keywords.Take(count).Select(k => k.Key).ToList();
+
+            await KeywordRepository.AddKeywords(keywords);
+            return await KeywordRepository.AddKeywordsToWebsite(this.WebPage.Keywords.Take(count).ToDictionary(v => v.Key, v => v.Value), this.CleanDomain);
+
+        }
+
+        private string CleanDomain
+        {
+            get
             {
                 var domain = this.WebPage.Domain;
 
@@ -45,13 +60,8 @@ namespace Manager
                     domain = domain.Replace(this.WebPage.SubDomain + ".", "");
                 }
 
-                return await WebsiteRepository.AddSubDomain(this.WebPage.SubDomain, domain);
+                return domain;
             }
-            else
-            {
-                return 0;
-            }
-
         }
     }
 }

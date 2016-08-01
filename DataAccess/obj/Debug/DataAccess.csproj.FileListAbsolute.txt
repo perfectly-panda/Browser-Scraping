@@ -14,3 +14,4 @@ C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAcces
 C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.websitechanges.resources
 C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.subdomainchanges.resources
 C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.subdomainFK.resources
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.keywordsInitial.resources
