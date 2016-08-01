@@ -33,18 +33,30 @@ namespace Parser
 
             this.Url = webBrowser.Url;
             this.Domain = webBrowser.Document.Domain;
+
+            this.PageTitle = webBrowser.DocumentTitle;
+
+            this.Headers = new Dictionary<string, List<HtmlNode>>();
+            FindHeaderNodes();
         }
 
+        #region basic info
         public Uri Url { get; set; }
 
         public String Domain { get; set; }
+
+        public String PageTitle { get; set; }
+
+        public Dictionary<string, List<HtmlNode>> Headers { get; set; }
 
         public List<HtmlNode> Links { get; set; }
 
         public HtmlDocument OriginalDocument { get; set; }
 
         public HtmlDocument InjectedDocument { get; set; }
+        #endregion
 
+        #region calculated fields
         public String BlogLink { get; set; }
 
         public PageType PageType { get; set; }
@@ -59,6 +71,20 @@ namespace Parser
         }
 
         public Dictionary<string, int> Keywords {get; set;}
+
+        #endregion
+
+        private void FindHeaderNodes()
+        {
+            var h1 = this.OriginalDocument.DocumentNode.Descendants().Where(n => n.Name.ToLower() == "h1");
+            for(int i = 1; i <= 6; i++)
+            {
+                var nodes = this.OriginalDocument.DocumentNode.Descendants().Where(n => n.Name.ToLower() == "h"+i).ToList();
+
+                Headers.Add("H"+i, nodes);
+            }
+
+        }
 
         public override string ToString()
         {
