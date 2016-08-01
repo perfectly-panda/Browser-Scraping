@@ -54,6 +54,5 @@ namespace Parser.Functions
 
             return false;
         }
-
     }
 }
