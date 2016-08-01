@@ -55,6 +55,10 @@
     <Compile Include="Migrations\201607282203098_addModels.Designer.cs">
       <DependentUpon>201607282203098_addModels.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201607282228175_addTimeStamp.cs" />
+    <Compile Include="Migrations\201607282228175_addTimeStamp.Designer.cs">
+      <DependentUpon>201607282228175_addTimeStamp.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CalculatedTableUpdates.cs" />
     <Compile Include="Models\IgnoreList.cs" />
@@ -79,6 +83,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201607282203098_addModels.resx">
       <DependentUpon>201607282203098_addModels.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201607282228175_addTimeStamp.resx">
+      <DependentUpon>201607282228175_addTimeStamp.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

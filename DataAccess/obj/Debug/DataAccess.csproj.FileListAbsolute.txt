@@ -10,3 +10,4 @@ C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAcces
 C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
 C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.addModels.resources
 C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\obj\Debug\DataAccess.csproj.GenerateResource.Cache
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.addTimeStamp.resources

@@ -1,11 +1,7 @@
-﻿using DataAccess;
-using DataAccess.Models;
+﻿using DataAccess.Models;
 using DataAccess.Repository;
-using Parser;
-using System;
+using Parser.Functions;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -20,6 +16,13 @@ namespace Manager
             List<IgnoreList> ignoreList = await IgnoreListRepository.GetIgnoreList();
 
             webPage.CreateWebPage(webBrowser, ignoreList);
+
+
+
+            webPage.TextAsList = TextList.CreateTextList(webPage.InjectedDocument);
+            webPage.BlogLink = Navigation.BlogLink(webPage.Links);
+            webPage.Keywords = TextList.CreateKeywordList(webPage.TextAsList, ignoreList);
+            webPage.PageType = PageTyping.FindPageType(webPage.OriginalDocument);
 
             return webPage;
         }

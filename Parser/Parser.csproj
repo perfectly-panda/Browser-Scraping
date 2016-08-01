@@ -45,9 +45,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Partials\BlogLink.cs" />
-    <Compile Include="Partials\KeywordList.cs" />
-    <Compile Include="Partials\PageType.cs" />
+    <Compile Include="Functions\Navigation.cs" />
+    <Compile Include="Functions\TextList.cs" />
+    <Compile Include="Functions\PageType.cs" />
     <Compile Include="PageType.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="WebPage.cs" />
@@ -56,7 +56,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Browser-Scraping\DataAccess\DataAccess.csproj">
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
       <Project>{b8182d4c-fe42-4bcc-ae85-fbfaace0c9b2}</Project>
       <Name>DataAccess</Name>
     </ProjectReference>

@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 using HtmlAgilityPack;
 using System.Text.RegularExpressions;
 using DataAccess.Models;
+using Parser.Functions;
 
 namespace Parser
 {
@@ -32,10 +33,6 @@ namespace Parser
 
             this.Url = webBrowser.Url;
             this.Domain = webBrowser.Document.Domain;
-
-            FindBlogLink();
-            CreateKeywordList(ignoreList);
-            FindPageType();
         }
 
         public Uri Url { get; set; }
@@ -52,34 +49,7 @@ namespace Parser
 
         public PageType PageType { get; set; }
 
-        private List<string> TextAsList
-        {
-            get
-            {
-                List<string> text = new List<string>();
-
-                var check = new Regex("[a-zA-Z0-9]");
-
-                var pattern = @"[\w]+";
-
-                var elements = this.InjectedDocument.DocumentNode.ChildNodes.Where(n => n.Name == "html").First().ChildNodes.Where(h => h.Name == "body").First().Descendants();
-
-                var nameIgnore = new List<string>() { "script", "style" };
-
-                foreach (var element in elements
-                    .Where(e => e.NodeType == HtmlNodeType.Element && !nameIgnore.Contains(e.Name) && e.HasChildNodes)
-                    .SelectMany(el=> el.ChildNodes).Where(elem=> elem.NodeType == HtmlNodeType.Text))
-                {
-                    if (!string.IsNullOrWhiteSpace(element.InnerText))                    {
-
-                        text.AddRange(Regex.Matches(element.InnerText, pattern).Cast<Match>().Select(m => m.Value.ToLower().Trim()).Where(v=> v.Length > 2).ToList());
-
-                    }
-                }
-
-                return text;
-            }
-        }
+        public List<string> TextAsList { get; set; }
 
         public int WordCount
         {
