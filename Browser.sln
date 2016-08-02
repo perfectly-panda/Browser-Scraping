@@ -7,7 +7,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Browser", "Browser.csproj",
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Parser", "Parser\Parser.csproj", "{19FDD402-684F-4F13-B041-1381AF3FD109}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Manager", "Manager\Manager.csproj", "{7D2D44F0-41B9-4D4A-8928-E9FBFA20D1EF}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrowserController", "Manager\BrowserController.csproj", "{7D2D44F0-41B9-4D4A-8928-E9FBFA20D1EF}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{B8182D4C-FE42-4BCC-AE85-FBFAACE0C9B2}"
 EndProject

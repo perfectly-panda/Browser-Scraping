@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
 using System.Text.RegularExpressions;
-using DataAccess.Models;
+using DataAccess.Entities;
 using Parser.Functions;
 
 namespace Parser

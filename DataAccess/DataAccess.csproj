@@ -55,6 +55,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\IEntity.cs" />
+    <Compile Include="Extensions.cs" />
+    <Compile Include="IDbContext.cs" />
     <Compile Include="Migrations\201607282203098_addModels.cs" />
     <Compile Include="Migrations\201607282203098_addModels.Designer.cs">
       <DependentUpon>201607282203098_addModels.cs</DependentUpon>
@@ -84,22 +87,23 @@
       <DependentUpon>201608012353287_webpagedata.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Models\CalculatedTableUpdates.cs" />
-    <Compile Include="Models\Entity.cs" />
-    <Compile Include="Models\Headers.cs" />
-    <Compile Include="Models\IgnoreList.cs" />
-    <Compile Include="Models\Keyword.cs" />
-    <Compile Include="Models\Links.cs" />
-    <Compile Include="Models\RelatedKeywords.cs" />
-    <Compile Include="Models\WebPageKeywords.cs" />
-    <Compile Include="Models\SubDomain.cs" />
-    <Compile Include="Models\WebPage.cs" />
-    <Compile Include="Models\Website.cs" />
-    <Compile Include="Models\WebsiteKeywords.cs" />
+    <Compile Include="Entities\Headers.cs" />
+    <Compile Include="Entities\IgnoreList.cs" />
+    <Compile Include="Entities\Keyword.cs" />
+    <Compile Include="Entities\Links.cs" />
+    <Compile Include="Entities\RelatedKeywords.cs" />
+    <Compile Include="Entities\WebPageKeywords.cs" />
+    <Compile Include="Entities\SubDomain.cs" />
+    <Compile Include="Entities\WebPage.cs" />
+    <Compile Include="Entities\Website.cs" />
+    <Compile Include="Entities\WebsiteKeywords.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
-    <Compile Include="Models\IEntity.cs" />
     <Compile Include="Repository\IgnoreListRepository.cs" />
-    <Compile Include="Repository\IRepository.cs" />
+    <Compile Include="Repository\Interfaces\IIgnoreListRepository.cs" />
+    <Compile Include="Repository\Interfaces\IKeywordRepository.cs" />
+    <Compile Include="Repository\Interfaces\IRepository.cs" />
+    <Compile Include="Repository\Interfaces\IWebsiteRepository.cs" />
+    <Compile Include="Repository\Interfaces\IWebPageRepository.cs" />
     <Compile Include="Repository\KeywordRepository.cs" />
     <Compile Include="Repository\WebPageRepository.cs" />
     <Compile Include="Repository\WebsiteRepository.cs" />

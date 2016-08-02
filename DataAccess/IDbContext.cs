@@ -1,5 +1,4 @@
 ﻿using DataAccess.Entities;
-using DataAccess.Models;
 using System;
 using System.Collections.Generic;
 using System.Data.Entity;
@@ -15,6 +14,7 @@ namespace DataAccess
         DbSet<TEntity> Set<TEntity>() where TEntity : class;
 
         int SaveChanges();
+        Task<int> SaveChangesAsync();
 
         DbEntityEntry<TEntity> Entry<TEntity>(TEntity entity) where TEntity : class;
     }

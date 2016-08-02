@@ -1,4 +1,4 @@
-﻿using DataAccess.Models;
+﻿using DataAccess.Entities;
 using HtmlAgilityPack;
 using System;
 using System.Collections.Generic;

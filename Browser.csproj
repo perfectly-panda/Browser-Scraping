@@ -90,9 +90,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="Manager\Manager.csproj">
+    <ProjectReference Include="Manager\BrowserController.csproj">
       <Project>{7d2d44f0-41b9-4d4a-8928-e9fbfa20d1ef}</Project>
-      <Name>Manager</Name>
+      <Name>BrowserController</Name>
     </ProjectReference>
     <ProjectReference Include="Parser\Parser.csproj">
       <Project>{19fdd402-684f-4f13-b041-1381af3fd109}</Project>

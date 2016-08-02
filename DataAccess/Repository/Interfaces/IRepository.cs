@@ -19,5 +19,7 @@ namespace DataAccess.Repository
         void Delete(Guid id);
 
         Task<T> FindById(Guid id);
+
+        Task<int> Save();
     }
 }

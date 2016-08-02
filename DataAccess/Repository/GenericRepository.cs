@@ -50,5 +50,10 @@ namespace DataAccess.Repository
             DbContext.Set<T>().Attach(item);
             DbContext.Entry(item).State = EntityState.Modified;
         }
+
+        public async Task<int> Save()
+        {
+            return await DbContext.SaveChangesAsync();
+        }
     }
 }
