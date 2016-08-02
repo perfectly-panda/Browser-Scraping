@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess
 {
-    public interface IWebDataContext
+    public interface IDbContext
     {
         DbSet<TEntity> Set<TEntity>() where TEntity : class;
 

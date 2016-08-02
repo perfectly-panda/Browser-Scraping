@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Entities
 {
-    public class Keyword 
+    public class Keyword : IEntity
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }

@@ -8,26 +8,12 @@ using System.Linq;
 
 namespace DataAccess.Repository
 {
-    public class KeywordRepository : IKeywordRepository
+    public class KeywordRepository : GenericRepository<Keyword>, IKeywordRepository
     {
-        private IWebDataContext DbContext { get; set; }
 
-        public KeywordRepository(IWebDataContext context)
-        {
-            DbContext = context;
-        }
+        public KeywordRepository(IDbContext context) : base(context) { }
 
-        public IEnumerable<Keyword> GetAll()
-        {
-            return DbContext.Set<Keyword>();
-        }
-
-        public void Add(Keyword item)
-        {
-            DbContext.Set<Keyword>().Add(item);
-        }
-
-        public void AddIfNew(Keyword item)
+        public override void AddIfNew(Keyword item)
         {
             DbContext.Set<Keyword>().AddIfNotExists(item, i => i.Value.Contains(item.Value));
         }
