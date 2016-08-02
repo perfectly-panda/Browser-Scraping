@@ -14,6 +14,14 @@ namespace DataAccess.Models
 
         public SubDomain SubDomain { get; set; }
 
+        public string Url { get; set; }
+
+        public string FullHtml { get; set; }
+
+        public string BodyHtml { get; set; }
+
+        public string Title { get; set; }
+
         public DateTime LastAccessed { get; set; }
     }
 }

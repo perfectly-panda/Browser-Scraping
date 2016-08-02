@@ -6,10 +6,16 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Models
 {
-    public class Keyword : BaseEntity
+    class Links
     {
         public Guid Id { get; set; }
 
-        public string Value { get; set; }
+        public WebPage WebPage { get; set; }
+
+        public string URL { get; set; }
+
+        public string LinkText { get; set; }
+
+        public bool Internal { get; set; }
     }
 }

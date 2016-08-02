@@ -28,8 +28,8 @@ namespace Manager
 
             var result = await save.SaveDomain();
             result = await save.SaveSubDomain();
-            result = await save.SaveSubDomain();
             result = await save.SaveKeywords(5);
+            result = await save.SaveWebPage();
 
             return webPage;
         }

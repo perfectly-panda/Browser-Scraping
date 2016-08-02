@@ -38,6 +38,10 @@
       <HintPath>..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.5, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9.5\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -75,18 +79,29 @@
     <Compile Include="Migrations\201608011952084_keywordsInitial.Designer.cs">
       <DependentUpon>201608011952084_keywordsInitial.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201608012353287_webpagedata.cs" />
+    <Compile Include="Migrations\201608012353287_webpagedata.Designer.cs">
+      <DependentUpon>201608012353287_webpagedata.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\CalculatedTableUpdates.cs" />
+    <Compile Include="Models\Entity.cs" />
+    <Compile Include="Models\Headers.cs" />
     <Compile Include="Models\IgnoreList.cs" />
     <Compile Include="Models\Keyword.cs" />
+    <Compile Include="Models\Links.cs" />
     <Compile Include="Models\RelatedKeywords.cs" />
     <Compile Include="Models\WebPageKeywords.cs" />
     <Compile Include="Models\SubDomain.cs" />
     <Compile Include="Models\WebPage.cs" />
     <Compile Include="Models\Website.cs" />
     <Compile Include="Models\WebsiteKeywords.cs" />
+    <Compile Include="Repository\GenericRepository.cs" />
+    <Compile Include="Models\IEntity.cs" />
     <Compile Include="Repository\IgnoreListRepository.cs" />
+    <Compile Include="Repository\IRepository.cs" />
     <Compile Include="Repository\KeywordRepository.cs" />
+    <Compile Include="Repository\WebPageRepository.cs" />
     <Compile Include="Repository\WebsiteRepository.cs" />
     <Compile Include="WebsiteData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -116,6 +131,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201608011952084_keywordsInitial.resx">
       <DependentUpon>201608011952084_keywordsInitial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608012353287_webpagedata.resx">
+      <DependentUpon>201608012353287_webpagedata.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

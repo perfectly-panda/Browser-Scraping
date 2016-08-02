@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Models
 {
-    public class Keyword : BaseEntity
+     public class Headers
     {
         public Guid Id { get; set; }
+        
+        public WebPage Webpage { get; set; }
 
-        public string Value { get; set; }
+        public int HeaderType { get; set; }
+
+        public string Content { get; set; }
     }
 }

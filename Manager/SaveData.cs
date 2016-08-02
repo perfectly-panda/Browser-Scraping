@@ -20,6 +20,9 @@ namespace Manager
         public async void SaveAll()
         {
             await SaveDomain();
+            await SaveSubDomain();
+            await SaveKeywords(5);
+            await SaveWebPage();
         }
 
         public async Task<int> SaveDomain()
@@ -44,9 +47,21 @@ namespace Manager
         {
             var keywords = this.WebPage.Keywords.Take(count).Select(k => k.Key).ToList();
 
-            await KeywordRepository.AddKeywords(keywords);
-            return await KeywordRepository.AddKeywordsToWebsite(this.WebPage.Keywords.Take(count).ToDictionary(v => v.Key, v => v.Value), this.CleanDomain);
+            var repository = new KeywordRepository();
 
+            await repository.AddKeywords(keywords);
+            return await repository.AddKeywordsToWebsite(this.WebPage.Keywords.Take(count).ToDictionary(v => v.Key, v => v.Value), this.CleanDomain);
+
+        }
+
+        public async Task<int> SaveWebPage()
+        {
+            return await WebPageRepository.AddWebPage(this.WebPage.SubDomain,
+                this.CleanDomain,
+                this.WebPage.Url.OriginalString,
+                this.WebPage.OriginalDocument.DocumentNode.InnerHtml,
+                this.WebPage.InjectedDocument.DocumentNode.InnerHtml,
+                this.WebPage.PageTitle);
         }
 
         private string CleanDomain

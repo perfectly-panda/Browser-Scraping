@@ -10,13 +10,21 @@ namespace DataAccess.Repository
 {
     public class KeywordRepository
     {
-        public static async Task<int> AddKeyword(string keyword)
+        public WebsiteDataContext db { get; protected set; }
+
+
+        public KeywordRepository()
         {
-            using (var db = new WebsiteDataContext())
+            db = new WebsiteDataContext();
+        }
+
+        public async Task<int> AddKeyword(string keyword)
+        {
+            using (db)
             {
                 try
                 {
-                    var check = await db.Keyword.Where(i => i.Value == keyword).FirstOrDefaultAsync();
+                    var check = await GetKeywordByValue(keyword);
 
                     if (check == null)
                     {
@@ -41,13 +49,13 @@ namespace DataAccess.Repository
             }
         }
 
-            public static async Task<int> AddKeywords(List<string> keywords)
+        public async Task<int> AddKeywords(List<string> keywords)
         {
-            using (var db = new WebsiteDataContext())
+            using (db)
             {
                 try
                 {
-                    var check = await db.Keyword.Where(i => keywords.Contains(i.Value)).ToListAsync();
+                    var check = await GetKeywordsByList(keywords);
 
                     if (check.Count < keywords.Count)
                     {
@@ -75,20 +83,36 @@ namespace DataAccess.Repository
             }
         }
 
-        public static async Task<int> AddKeywordsToWebsite(Dictionary<string, int> keywords, string domain)
+        public async Task<Keyword> GetKeywordByValue(string value)
         {
-            using (var db = new WebsiteDataContext())
+            using (db)
+            {
+                return await db.Keyword.Where(i => i.Value == value).FirstOrDefaultAsync();
+            }
+        }
+
+        public async Task<List<Keyword>> GetKeywordsByList(List<string> keywords)
+        {
+            using (db)
+            {
+                return await db.Keyword.Where(i => keywords.Contains(i.Value)).ToListAsync();
+            }
+        }
+
+        public async Task<int> AddKeywordsToWebsite(Dictionary<string, int> keywords, string domain)
+        {
+            using (db)
             {
                 var website = db.Website.Where(w => w.Domain == domain).First();
 
                 foreach (var keyword in keywords)
                 {
-                    Keyword check = await db.Keyword.Where(i => i.Value == keyword.Key).FirstOrDefaultAsync();
+                    Keyword check = await GetKeywordByValue(keyword.Key);
 
                     if (check == null)
                     {
                         await AddKeyword(keyword.Key);
-                        check = await db.Keyword.Where(i => i.Value == keyword.Key).FirstOrDefaultAsync();
+                        check = await GetKeywordByValue(keyword.Key);
                     }
 
                     WebsiteKeywords checkWeb = await db.WebsiteKeywords.Where(i => i.Keyword.Id == check.Id && i.WebSite.Id == website.Id).FirstOrDefaultAsync();

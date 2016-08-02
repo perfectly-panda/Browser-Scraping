@@ -36,7 +36,7 @@ namespace Parser
 
             this.PageTitle = webBrowser.DocumentTitle;
 
-            this.Headers = new Dictionary<string, List<HtmlNode>>();
+            this.Headers = new Dictionary<HeaderType, List<HtmlNode>>();
             FindHeaderNodes();
         }
 
@@ -47,7 +47,7 @@ namespace Parser
 
         public String PageTitle { get; set; }
 
-        public Dictionary<string, List<HtmlNode>> Headers { get; set; }
+        public Dictionary<HeaderType, List<HtmlNode>> Headers { get; set; }
 
         public List<HtmlNode> Links { get; set; }
 
@@ -87,12 +87,13 @@ namespace Parser
             {
                 var nodes = this.OriginalDocument.DocumentNode.Descendants().Where(n => n.Name.ToLower() == "h"+i).ToList();
 
-                Headers.Add("H"+i, nodes);
+
+                Headers.Add( (HeaderType)Enum.Parse(typeof(HeaderType), "H" + i), nodes);
             }
 
             var bold = this.OriginalDocument.DocumentNode.Descendants().Where(n => n.Name.ToLower() == "b").ToList();
 
-            Headers.Add("B", bold);
+            Headers.Add((HeaderType)Enum.Parse(typeof(HeaderType), "B"), bold);
         }
 
         public override string ToString()

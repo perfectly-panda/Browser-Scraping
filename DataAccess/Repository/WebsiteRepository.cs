@@ -8,8 +8,15 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repository
 {
-    public static class WebsiteRepository
+    public class WebsiteRepository
     {
+        public WebsiteDataContext db { get; protected set; }
+
+        public WebsiteRepository(WebsiteDataContext dbcontext)
+        {
+            this.db = dbcontext;
+        }
+
         public static async Task<int> AddWebsite(string domain)
         {
             using (var db = new WebsiteDataContext())

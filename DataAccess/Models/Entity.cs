@@ -6,10 +6,14 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Models
 {
-    public class Keyword : BaseEntity
-    {
-        public Guid Id { get; set; }
 
-        public string Value { get; set; }
+    public abstract class BaseEntity
+    {
+
+    }
+
+    public abstract class Entity<T> : BaseEntity, IEntity<T>
+    {
+        public virtual T Id { get; set; }
     }
 }

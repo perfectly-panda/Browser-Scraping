@@ -6,10 +6,9 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Models
 {
-    public class Keyword : BaseEntity
-    {
-        public Guid Id { get; set; }
 
-        public string Value { get; set; }
+    public interface IEntity<T>
+    {
+        T Id { get; set; }
     }
 }
