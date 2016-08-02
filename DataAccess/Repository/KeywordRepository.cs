@@ -1,146 +1,58 @@
-﻿using DataAccess.Models;
-using System;
+﻿using DataAccess.Entities;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
+using System;
+using System.Linq.Expressions;
+using System.Linq;
 
 namespace DataAccess.Repository
 {
-    public class KeywordRepository
+    public class KeywordRepository : IKeywordRepository
     {
-        public WebsiteDataContext db { get; protected set; }
+        private IWebDataContext DbContext { get; set; }
 
-
-        public KeywordRepository()
+        public KeywordRepository(IWebDataContext context)
         {
-            db = new WebsiteDataContext();
+            DbContext = context;
         }
 
-        public async Task<int> AddKeyword(string keyword)
+        public IEnumerable<Keyword> GetAll()
         {
-            using (db)
-            {
-                try
-                {
-                    var check = await GetKeywordByValue(keyword);
-
-                    if (check == null)
-                    {
-
-                        Keyword word = new Keyword();
-                        word.Value = keyword;
-                        word.Id = Guid.NewGuid();
-
-                        db.Keyword.Add(word);
-
-                        return await db.SaveChangesAsync();
-                    }
-
-                    return 0;
-                }
-                catch
-                {
-
-                }
-
-                return -1;
-            }
+            return DbContext.Set<Keyword>();
         }
 
-        public async Task<int> AddKeywords(List<string> keywords)
+        public void Add(Keyword item)
         {
-            using (db)
-            {
-                try
-                {
-                    var check = await GetKeywordsByList(keywords);
+            DbContext.Set<Keyword>().Add(item);
+        }
 
-                    if (check.Count < keywords.Count)
-                    {
-                        List<Keyword> words = new List<Keyword>();
-                        var filteredKeywords = keywords.Where(p => !check.Any(k=> k.Value == p));
+        public void AddIfNew(Keyword item)
+        {
+            DbContext.Set<Keyword>().AddIfNotExists(item, i => i.Value.Contains(item.Value));
+        }
 
-                        foreach (var keyword in filteredKeywords) {
-                            Keyword word = new Keyword();
-                            word.Value = keyword;
-                            word.Id = Guid.NewGuid();
+        public void Update(Keyword item)
+        {
+            DbContext.Set<Keyword>().Attach(item);
+            DbContext.Entry(item).State = EntityState.Modified;
+        }
 
-                            db.Keyword.Add(word);
-                        }
-                        
-                        return await db.SaveChangesAsync();
-                    }
-                    return 0;
-                }
-                catch
-                {
+        public void Delete(Guid id)
+        {
+            var keyword = new Keyword { Id = id };
+            DbContext.Set<Keyword>().Attach(keyword);
+            DbContext.Set<Keyword>().Remove(keyword);
+        }
 
-                }
-
-                return -1;
-            }
+        public async Task<Keyword> FindById(Guid id)
+        {
+            return await DbContext.Set<Keyword>().FindAsync(id);
         }
 
         public async Task<Keyword> GetKeywordByValue(string value)
         {
-            using (db)
-            {
-                return await db.Keyword.Where(i => i.Value == value).FirstOrDefaultAsync();
-            }
-        }
-
-        public async Task<List<Keyword>> GetKeywordsByList(List<string> keywords)
-        {
-            using (db)
-            {
-                return await db.Keyword.Where(i => keywords.Contains(i.Value)).ToListAsync();
-            }
-        }
-
-        public async Task<int> AddKeywordsToWebsite(Dictionary<string, int> keywords, string domain)
-        {
-            using (db)
-            {
-                var website = db.Website.Where(w => w.Domain == domain).First();
-
-                foreach (var keyword in keywords)
-                {
-                    Keyword check = await GetKeywordByValue(keyword.Key);
-
-                    if (check == null)
-                    {
-                        await AddKeyword(keyword.Key);
-                        check = await GetKeywordByValue(keyword.Key);
-                    }
-
-                    WebsiteKeywords checkWeb = await db.WebsiteKeywords.Where(i => i.Keyword.Id == check.Id && i.WebSite.Id == website.Id).FirstOrDefaultAsync();
-
-                    if (checkWeb == null)
-                    {
-                        //counts are going to be a computed from webpage updates
-                        //existing keywords can therefore be ignored at this point
-                        WebsiteKeywords word = new WebsiteKeywords();
-                        word.Keyword = check;
-                        word.Id = Guid.NewGuid();
-                        word.WebSite = website;
-
-                        db.WebsiteKeywords.Add(word);
-
-                    }
-                }
-                try
-                {
-                    return await db.SaveChangesAsync();
-                }
-                catch
-                {
-
-                }
-
-                return -1;
-            }
+            return await DbContext.Set<Keyword>().Where(k => k.Value == value).FirstOrDefaultAsync();
         }
     }
 }
