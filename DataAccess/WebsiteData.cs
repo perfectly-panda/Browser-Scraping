@@ -6,7 +6,7 @@ namespace DataAccess
     using System.Data.Entity;
     using System.Linq;
 
-    public class WebsiteDataContext : DbContext, IWebDataContext
+    public class WebsiteDataContext : DbContext, IDbContext
     {
         public WebsiteDataContext()
             : base("WebsiteData")
