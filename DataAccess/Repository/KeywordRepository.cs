@@ -10,8 +10,11 @@ namespace DataAccess.Repository
 {
     public class KeywordRepository : GenericRepository<Keyword>, IKeywordRepository
     {
+        private readonly IDbContext context;
 
-        public KeywordRepository(IDbContext context) : base(context) { }
+        public KeywordRepository(IDbContext context) : base(context) {
+            this.context = context;
+        }
 
         public override void AddIfNew(Keyword item)
         {

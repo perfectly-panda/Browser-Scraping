@@ -18,3 +18,24 @@ C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAcces
 C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\bin\Debug\HtmlAgilityPack.dll
 C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\bin\Debug\HtmlAgilityPack.pdb
 C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\bin\Debug\HtmlAgilityPack.xml
+D:\Browser-Scraping\DataAccess\bin\Debug\DataAccess.dll.config
+D:\Browser-Scraping\DataAccess\bin\Debug\DataAccess.dll
+D:\Browser-Scraping\DataAccess\bin\Debug\DataAccess.pdb
+D:\Browser-Scraping\DataAccess\bin\Debug\EntityFramework.dll
+D:\Browser-Scraping\DataAccess\bin\Debug\EntityFramework.SqlServer.dll
+D:\Browser-Scraping\DataAccess\bin\Debug\HtmlAgilityPack.dll
+D:\Browser-Scraping\DataAccess\bin\Debug\EntityFramework.xml
+D:\Browser-Scraping\DataAccess\bin\Debug\EntityFramework.SqlServer.xml
+D:\Browser-Scraping\DataAccess\bin\Debug\HtmlAgilityPack.pdb
+D:\Browser-Scraping\DataAccess\bin\Debug\HtmlAgilityPack.xml
+D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.addModels.resources
+D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.addTimeStamp.resources
+D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.websitechanges.resources
+D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.subdomainchanges.resources
+D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.subdomainFK.resources
+D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.keywordsInitial.resources
+D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.webpagedata.resources
+D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.csproj.GenerateResource.Cache
+D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.dll
+D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.pdb

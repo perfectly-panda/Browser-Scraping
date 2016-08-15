@@ -1,4 +1,6 @@
-﻿using DataAccess.Repository;
+﻿using Autofac;
+using DataAccess.Entities;
+using DataAccess.Repository;
 using Parser;
 using System;
 using System.Collections.Generic;
@@ -10,24 +12,34 @@ namespace Manager
 {
     public class SaveData
     {
+        private Autofac.IContainer Container { get; set; }
         private Parser.WebPage WebPage { get; set; } 
 
-        public SaveData(WebPage webPage)
+        public SaveData(Parser.WebPage webPage, Autofac.IContainer container)
         {
             this.WebPage = webPage;
+            this.Container = container;
         }
 
         public async void SaveAll()
         {
-            await SaveDomain();
+            SaveDomain();
             await SaveSubDomain();
             await SaveKeywords(5);
             await SaveWebPage();
         }
 
-        public async Task<int> SaveDomain()
+        public void SaveDomain()
         {
-            return await WebsiteRepository.AddWebsite(this.CleanDomain);
+            using (var scope = Container.BeginLifetimeScope())
+            {
+                var repo = scope.Resolve<IWebsiteRepository>();
+
+                Website website = new Website();
+                website.Domain = this.CleanDomain;
+
+                repo.Add(website);
+            }
         }
 
         public async Task<int> SaveSubDomain()
