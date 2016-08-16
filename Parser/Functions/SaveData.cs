@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Manager
+namespace Parser
 {
     public class SaveData
     {
@@ -127,6 +127,20 @@ namespace Manager
                 webPage.LastAccessed = DateTime.UtcNow;
 
                 repo.AddOrUpdate(webPage);
+
+                return await repo.Save();
+            }
+        }
+
+        public async Task<int> NewIgnoreListItem(string item)
+        {
+            using (var scope = Container.BeginLifetimeScope())
+            {
+                var repo = scope.Resolve<IIgnoreListRepository>();
+
+                IgnoreList newItem = new IgnoreList();
+                newItem.Value = item;
+                repo.AddIfNew(newItem);
 
                 return await repo.Save();
             }

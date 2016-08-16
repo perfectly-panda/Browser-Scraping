@@ -13,6 +13,8 @@ namespace Parser
     public class Parse
     {
         public WebPage WebPage { get; set; }
+        public SaveData SaveData { get; set; }
+        public List<IgnoreList> IgnoreList { get; set; }
 
         private static Autofac.IContainer Container { get; set; }
 
@@ -26,18 +28,33 @@ namespace Parser
             builder.RegisterType<SubDomainRepository>().As<ISubDomainRepository>();
             builder.RegisterType<KeywordRepository>().As<IKeywordRepository>();
             Container = builder.Build();
-        }
 
-        public void NewIgnoreListItem(string item)
-        {
+            this.WebPage = new WebPage();
             using (var scope = Container.BeginLifetimeScope())
             {
                 var repo = scope.Resolve<IIgnoreListRepository>();
-
-                IgnoreList newItem = new IgnoreList();
-                newItem.Value = item;
-                repo.AddIfNew(newItem);
+                this.IgnoreList = repo.GetAll().ToList();
             }
+
+            this.WebPage.CreateWebPage(webBrowser, this.IgnoreList);
+
+            SaveData = new SaveData(WebPage, Container);
+        }
+
+        public async Task<int> NewIgnoreListItem(string item)
+        {
+            int result = await SaveData.NewIgnoreListItem(item);
+
+            if(result > 0)
+            {
+                using (var scope = Container.BeginLifetimeScope())
+                {
+                    var repo = scope.Resolve<IIgnoreListRepository>();
+                    this.IgnoreList = repo.GetAll().ToList();
+                }
+            }
+
+            return result;
         }
     }
 }
