@@ -16,5 +16,10 @@ namespace DataAccess
             var exists = predicate != null ? dbSet.Any(predicate) : dbSet.Any();
             return !exists ?  dbSet.Add(entity) : null;
         }
+
+        public static IEnumerable<T> Get<T>(this DbSet<T> dbSet, Expression<Func<T, bool>> predicate = null) where T : class, new()
+        {
+            return dbSet.Where(predicate);
+        }
     }
 }

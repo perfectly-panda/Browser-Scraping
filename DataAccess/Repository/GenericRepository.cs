@@ -6,6 +6,7 @@ using System.Data.Entity;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Linq.Expressions;
 
 namespace DataAccess.Repository
 {
@@ -40,9 +41,9 @@ namespace DataAccess.Repository
             DbContext.Set<T>().Remove(item);
         }
 
-        public Task<T> FindById(Guid id)
+        public T FindById(Guid id)
         {
-            throw new NotImplementedException();
+            return DbContext.Set<T>().Get(i => i.Id == id).FirstOrDefault();
         }
 
         public IEnumerable<T> GetAll()
@@ -59,6 +60,11 @@ namespace DataAccess.Repository
         public async Task<int> Save()
         {
             return await DbContext.SaveChangesAsync();
+        }
+
+        public IEnumerable<T> Get(Expression<Func<T, bool>> predicate)
+        {
+            return DbContext.Set<T>().Get(predicate);
         }
     }
 }
