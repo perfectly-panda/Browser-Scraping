@@ -36,7 +36,7 @@ namespace Browser
 
         }
 
-        private async void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        private  void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
             if (webBrowser1.ReadyState != WebBrowserReadyState.Complete || e.Url.AbsolutePath != (sender as WebBrowser).Url.AbsolutePath)
             {
@@ -63,12 +63,6 @@ namespace Browser
                 {
                     EventLog.AppendLog(webPage.BlogLink);
                 }
-
-                var topKeywords = String.Join(", ", webPage.Keywords.Take(5));
-
-                EventLog.AppendLog("Top Keywords: " + topKeywords);
-
-                EventLog.AppendLog("Page Type: " + webPage.PageType.ToString());
 
                 button1.Enabled = true;
             }

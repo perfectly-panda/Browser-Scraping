@@ -81,7 +81,7 @@ namespace Parser
             }
         }
 
-        public Dictionary<string, int> Keywords {get; set;}
+        public Dictionary<string, int> Keywords { get; set; }
 
         #endregion
 
