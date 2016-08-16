@@ -1,4 +1,4 @@
-﻿using DataAccess.Entities;
+﻿using Core.Entities;
 using System.Data.Entity;
 using System.Linq;
 using System.Text;

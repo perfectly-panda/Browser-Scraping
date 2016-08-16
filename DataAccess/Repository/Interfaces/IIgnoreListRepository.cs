@@ -1,4 +1,4 @@
-﻿using DataAccess.Entities;
+﻿using Core.Entities;
 
 namespace DataAccess.Repository
 {

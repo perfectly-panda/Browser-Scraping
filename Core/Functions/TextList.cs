@@ -1,4 +1,4 @@
-﻿using DataAccess.Entities;
+﻿using Core.Entities;
 using HtmlAgilityPack;
 using System;
 using System.Collections.Generic;
@@ -7,7 +7,7 @@ using System.Text;
 using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 
-namespace Parser.Functions
+namespace Core.Functions
 {
     public static class TextList
     {

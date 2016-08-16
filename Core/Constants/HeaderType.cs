@@ -4,10 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace DataAccess.Entities
+namespace Core.Constants
 {
-    public interface IEntity
+    public enum HeaderType
     {
-        Guid Id { get; set; }
+        H1,
+        H2,
+        H3,
+        H4,
+        H5,
+        H6,
+        B
     }
 }

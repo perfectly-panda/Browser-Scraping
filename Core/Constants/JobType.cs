@@ -12,7 +12,7 @@ namespace Core.Constants
         RebuildBaseKeywords,
         RebuildWebpageKeywords,
         RebuildWebsiteKeywords,
-        RebuildRelatedKeywords
-
+        RebuildRelatedKeywords,
+        CheckLinks
     }
 }

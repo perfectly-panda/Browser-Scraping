@@ -1,6 +1,6 @@
 ﻿using System;
 using System.Threading.Tasks;
-using DataAccess.Entities;
+using Core.Entities;
 
 namespace DataAccess.Repository
 {

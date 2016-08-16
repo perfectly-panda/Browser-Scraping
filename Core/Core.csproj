@@ -30,9 +30,14 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="HtmlAgilityPack, Version=1.4.9.5, Culture=neutral, PublicKeyToken=bd319b19eaf3b43a, processorArchitecture=MSIL">
+      <HintPath>..\packages\HtmlAgilityPack.1.4.9.5\lib\Net45\HtmlAgilityPack.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -41,7 +46,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Constants\HeaderType.cs" />
     <Compile Include="Constants\JobType.cs" />
+    <Compile Include="Constants\PageType.cs" />
     <Compile Include="Entities\Headers.cs" />
     <Compile Include="Entities\IEntity.cs" />
     <Compile Include="Entities\IgnoreList.cs" />
@@ -54,7 +61,14 @@
     <Compile Include="Entities\WebPageKeywords.cs" />
     <Compile Include="Entities\Website.cs" />
     <Compile Include="Entities\WebsiteKeywords.cs" />
+    <Compile Include="Functions\Navigation.cs" />
+    <Compile Include="Functions\PageTyping.cs" />
+    <Compile Include="Functions\TextList.cs" />
+    <Compile Include="ParsedWebpage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

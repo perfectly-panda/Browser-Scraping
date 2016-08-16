@@ -1,6 +1,6 @@
 namespace DataAccess
 {
-    using Entities;
+    using Core.Entities;
     using System;
     using System.Data.Entity;
     using System.Linq;

@@ -21,6 +21,6 @@ namespace Core.Entities
 
         public string LinkText { get; set; }
 
-        public bool Internal { get; set; }
+        public bool? Internal { get; set; }
     }
 }

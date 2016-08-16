@@ -19,9 +19,6 @@ namespace Core.Entities
         public string Url { get; set; }
 
         [Required]
-        public bool Complete { get; set; }
-
-        [Required]
         public DateTime CreatedOn { get; set; }
 
         public DateTime CompletedOn { get; set; }

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
 
-namespace Parser.Functions
+namespace Core.Functions
 {
     public static class Navigation
     {

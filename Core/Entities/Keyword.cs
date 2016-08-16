@@ -15,5 +15,7 @@ namespace Core.Entities
 
         [Required]
         public string Value { get; set; }
+
+        public bool? Verified { get; set; }
     }
 }

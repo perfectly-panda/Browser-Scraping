@@ -8,12 +8,13 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using Manager;
 using Parser;
+using Core;
 
 namespace Browser
 {
     public partial class Form1 : Form
     {
-        private WebPage WebPage { get; set; }
+        private ParsedWebpage WebPage { get; set; }
 
         public EventLog EventLog { get; set; }
 
@@ -46,7 +47,7 @@ namespace Browser
             {
                 EventLog.AppendLog("Page Loaded");
 
-                WebPage webPage =  Manager.ReceiveWebPage(webBrowser1);
+                ParsedWebpage webPage =  Manager.ReceiveWebPage(webBrowser1);
 
                 textBox2.Text = webPage.Url.ToString();
 

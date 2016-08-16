@@ -1,18 +1,19 @@
 ﻿using Autofac;
 using DataAccess;
-using DataAccess.Entities;
+using Core.Entities;
 using DataAccess.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Core;
 
 namespace Parser
 {
     public class Parse
     {
-        public WebPage WebPage { get; set; }
+        public ParsedWebpage Webpage { get; set; }
         public SaveData SaveData { get; set; }
         public List<IgnoreList> IgnoreList { get; set; }
 
@@ -29,18 +30,18 @@ namespace Parser
             builder.RegisterType<KeywordRepository>().As<IKeywordRepository>();
             Container = builder.Build();
 
-            this.WebPage = new WebPage();
+            this.Webpage = new ParsedWebpage();
             using (var scope = Container.BeginLifetimeScope())
             {
                 var repo = scope.Resolve<IIgnoreListRepository>();
                 this.IgnoreList = repo.GetAll().ToList();
             }
 
-            this.WebPage.CreateWebPage(webBrowser, this.IgnoreList);
+            this.Webpage.CreateWebPage(webBrowser, this.IgnoreList);
 
-            SaveData = new SaveData(WebPage, Container);
+            //SaveData = new SaveData(WebPage, Container);
         }
-
+        /*
         public async Task<int> NewIgnoreListItem(string item)
         {
             int result = await SaveData.NewIgnoreListItem(item);
@@ -56,5 +57,6 @@ namespace Parser
 
             return result;
         }
+        */
     }
 }

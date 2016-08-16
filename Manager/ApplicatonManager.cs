@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Collections.Generic;
 using Core.Entities;
+using Core;
 
 namespace Manager
 {
@@ -14,16 +15,16 @@ namespace Manager
 
         private List<JobList> JobList { get; set; }
 
-        public Parser.WebPage ReceiveWebPage(WebBrowser webBrowser)
+        public ParsedWebpage ReceiveWebPage(WebBrowser webBrowser)
         {
             this.parser =  new Parse(webBrowser);
 
-            return parser.WebPage;
+            return parser.Webpage;
         }
 
         public async Task<int> NewIgnoreListItem(string item)
         {
-            return await parser.NewIgnoreListItem(item);
+            return await Task.FromResult<int>(1);
         }
 
     }

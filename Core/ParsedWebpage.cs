@@ -5,12 +5,13 @@ using System.Text;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
 using System.Text.RegularExpressions;
-using DataAccess.Entities;
-using Parser.Functions;
+using Core.Entities;
+using Core.Constants;
+using Core.Functions;
 
-namespace Parser
+namespace Core
 {
-    public partial class WebPage
+    public partial class ParsedWebpage
     {
         public void CreateWebPage(System.Windows.Forms.WebBrowser webBrowser, List<IgnoreList> ignoreList)
         {

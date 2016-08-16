@@ -55,8 +55,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Entities\IEntity.cs" />
-    <Compile Include="Entities\JobList.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="IDbContext.cs" />
     <Compile Include="Migrations\201608160134065_ReInitializeDB.cs" />
@@ -64,16 +62,6 @@
       <DependentUpon>201608160134065_ReInitializeDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
-    <Compile Include="Entities\Headers.cs" />
-    <Compile Include="Entities\IgnoreList.cs" />
-    <Compile Include="Entities\Keyword.cs" />
-    <Compile Include="Entities\Links.cs" />
-    <Compile Include="Entities\RelatedKeywords.cs" />
-    <Compile Include="Entities\WebPageKeywords.cs" />
-    <Compile Include="Entities\SubDomain.cs" />
-    <Compile Include="Entities\WebPage.cs" />
-    <Compile Include="Entities\Website.cs" />
-    <Compile Include="Entities\WebsiteKeywords.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
     <Compile Include="Repository\IgnoreListRepository.cs" />
     <Compile Include="Repository\Interfaces\IIgnoreListRepository.cs" />

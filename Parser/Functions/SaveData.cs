@@ -1,5 +1,5 @@
 ﻿using Autofac;
-using DataAccess.Entities;
+using Core.Entities;
 using DataAccess.Repository;
 using Parser;
 using System;
@@ -12,9 +12,11 @@ namespace Parser
 {
     public class SaveData
     {
-        private Autofac.IContainer Container { get; set; }
+
+        //saving this just to get stuff out of it
+        /*private Autofac.IContainer Container { get; set; }
         private Parser.WebPage WebPage { get; set; }
-        private DataAccess.Entities.Website Website { get; set; }
+        private Core.Entities.Website Website { get; set; }
 
         public SaveData(Parser.WebPage webPage, Autofac.IContainer container)
         {
@@ -56,7 +58,7 @@ namespace Parser
 
                 if (!String.IsNullOrWhiteSpace(this.WebPage.SubDomain))
                 {
-                    DataAccess.Entities.SubDomain subDomain = new SubDomain();
+                    Core.Entities.SubDomain subDomain = new SubDomain();
                     subDomain.Domain = this.WebPage.SubDomain;
                     subDomain.Website = this.Website;
                     repo.AddIfNew(subDomain);
@@ -79,7 +81,7 @@ namespace Parser
                 var webrepo = scope.Resolve<IWebPageRepository>();
                 var keywords = this.WebPage.Keywords.ToList();
 
-                DataAccess.Entities.WebPage webPage = await webrepo.FindByUrl(this.CleanDomain);
+                Core.Entities.WebPage webPage = await webrepo.FindByUrl(this.CleanDomain);
 
                 if(webPage == null)
                 {
@@ -115,7 +117,7 @@ namespace Parser
 
                 await CheckWebSite();
 
-                DataAccess.Entities.WebPage webPage = new DataAccess.Entities.WebPage();
+                Core.Entities.WebPage webPage = new Core.Entities.WebPage();
 
                 webPage.SubDomain = await subDomRepo.FindByDomain(this.WebPage.SubDomain, this.Website);
                 webPage.Website = this.Website;
@@ -171,6 +173,6 @@ namespace Parser
                     this.Website = await website.FindByUrl(this.CleanDomain);
                 }
             }
-        }
+        }*/
     }
 }

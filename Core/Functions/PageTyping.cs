@@ -4,12 +4,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using HtmlAgilityPack;
+using Core.Constants;
+using Core.Entities;
 
-namespace Parser.Functions
+namespace Core.Functions
 {
      public static class PageTyping
     {
-        public static PageType FindPageType(WebPage webPage)
+        public static PageType FindPageType(ParsedWebpage webPage)
         {
             if (CheckForHomePage(webPage)) return PageType.HomePage;
             if (CheckForBlogHomePage(webPage)) return PageType.BlogHomePage;
@@ -18,7 +20,7 @@ namespace Parser.Functions
             return PageType.Page;
         }
 
-        private static bool CheckForHomePage(WebPage webPage)
+        private static bool CheckForHomePage(ParsedWebpage webPage)
         {
             var path = webPage.Url.AbsolutePath;
 
@@ -31,7 +33,7 @@ namespace Parser.Functions
             return false;
         }
 
-        private static bool CheckForBlogHomePage(WebPage webPage)
+        private static bool CheckForBlogHomePage(ParsedWebpage webPage)
         {
             var path = webPage.Url.AbsolutePath;
 
@@ -44,7 +46,7 @@ namespace Parser.Functions
             return false;
         }
 
-        private static bool CheckForBlogPage(WebPage webPage)
+        private static bool CheckForBlogPage(ParsedWebpage webPage)
         {
             var path = webPage.Url.AbsolutePath;
 
