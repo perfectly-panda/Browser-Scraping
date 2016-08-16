@@ -68,3 +68,5 @@ D:\Browser-Scraping\bin\Debug\DataAccess.pdb
 D:\Browser-Scraping\bin\Debug\Microsoft.AspNet.Scaffolding.12.0.xml
 D:\Browser-Scraping\bin\Debug\EntityFramework.xml
 D:\Browser-Scraping\bin\Debug\EntityFramework.SqlServer.xml
+D:\Browser-Scraping\bin\Debug\Autofac.dll
+D:\Browser-Scraping\bin\Debug\Autofac.xml

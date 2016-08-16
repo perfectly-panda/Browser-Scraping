@@ -24,6 +24,11 @@ namespace DataAccess
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             var instance = System.Data.Entity.SqlServer.SqlProviderServices.Instance;
+
+            modelBuilder.Entity<RelatedKeywords>()
+                .HasRequired<Keyword>(k => k.PrimaryKeyword)
+                .WithRequiredDependent()
+                .WillCascadeOnDelete(false);
         }
     }
 }

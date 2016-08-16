@@ -7,13 +7,13 @@ namespace DataAccess.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class addModels : IMigrationMetadata
+    public sealed partial class ReInitializeDB : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(addModels));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ReInitializeDB));
         
         string IMigrationMetadata.Id
         {
-            get { return "201607282203098_addModels"; }
+            get { return "201608160134065_ReInitializeDB"; }
         }
         
         string IMigrationMetadata.Source

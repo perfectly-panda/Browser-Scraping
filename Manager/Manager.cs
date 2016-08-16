@@ -20,9 +20,9 @@ namespace Manager
             return parser.WebPage;
         }
 
-        public void NewIgnoreListItem(string item)
+        public async Task<int> NewIgnoreListItem(string item)
         {
-            parser.NewIgnoreListItem(item);
+            return await parser.NewIgnoreListItem(item);
         }
 
     }

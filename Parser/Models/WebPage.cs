@@ -72,6 +72,11 @@ namespace Parser
         public int WordCount
         {
             get {
+                if(TextAsList == null)
+                {
+                    TextAsList = TextList.CreateTextList(this.InjectedDocument);
+                }
+
                 return TextAsList.Count;
             }
         }

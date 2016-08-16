@@ -58,33 +58,9 @@
     <Compile Include="Entities\IEntity.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="IDbContext.cs" />
-    <Compile Include="Migrations\201607282203098_addModels.cs" />
-    <Compile Include="Migrations\201607282203098_addModels.Designer.cs">
-      <DependentUpon>201607282203098_addModels.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201607282228175_addTimeStamp.cs" />
-    <Compile Include="Migrations\201607282228175_addTimeStamp.Designer.cs">
-      <DependentUpon>201607282228175_addTimeStamp.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201608011846187_websitechanges.cs" />
-    <Compile Include="Migrations\201608011846187_websitechanges.Designer.cs">
-      <DependentUpon>201608011846187_websitechanges.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201608011922505_subdomainchanges.cs" />
-    <Compile Include="Migrations\201608011922505_subdomainchanges.Designer.cs">
-      <DependentUpon>201608011922505_subdomainchanges.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201608011925594_subdomainFK.cs" />
-    <Compile Include="Migrations\201608011925594_subdomainFK.Designer.cs">
-      <DependentUpon>201608011925594_subdomainFK.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201608011952084_keywordsInitial.cs" />
-    <Compile Include="Migrations\201608011952084_keywordsInitial.Designer.cs">
-      <DependentUpon>201608011952084_keywordsInitial.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201608012353287_webpagedata.cs" />
-    <Compile Include="Migrations\201608012353287_webpagedata.Designer.cs">
-      <DependentUpon>201608012353287_webpagedata.cs</DependentUpon>
+    <Compile Include="Migrations\201608160134065_ReInitializeDB.cs" />
+    <Compile Include="Migrations\201608160134065_ReInitializeDB.Designer.cs">
+      <DependentUpon>201608160134065_ReInitializeDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Entities\Headers.cs" />
@@ -100,11 +76,15 @@
     <Compile Include="Repository\GenericRepository.cs" />
     <Compile Include="Repository\IgnoreListRepository.cs" />
     <Compile Include="Repository\Interfaces\IIgnoreListRepository.cs" />
+    <Compile Include="Repository\Interfaces\IWebPageKeywordRepository.cs" />
     <Compile Include="Repository\Interfaces\IKeywordRepository.cs" />
     <Compile Include="Repository\Interfaces\IRepository.cs" />
+    <Compile Include="Repository\Interfaces\ISubDomainRepository.cs" />
     <Compile Include="Repository\Interfaces\IWebsiteRepository.cs" />
     <Compile Include="Repository\Interfaces\IWebPageRepository.cs" />
+    <Compile Include="Repository\WebPageKeywordRepository .cs" />
     <Compile Include="Repository\KeywordRepository.cs" />
+    <Compile Include="Repository\SubDomainRepository .cs" />
     <Compile Include="Repository\WebPageRepository.cs" />
     <Compile Include="Repository\WebsiteRepository.cs" />
     <Compile Include="WebsiteData.cs" />
@@ -118,26 +98,8 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201607282203098_addModels.resx">
-      <DependentUpon>201607282203098_addModels.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201607282228175_addTimeStamp.resx">
-      <DependentUpon>201607282228175_addTimeStamp.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608011846187_websitechanges.resx">
-      <DependentUpon>201608011846187_websitechanges.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608011922505_subdomainchanges.resx">
-      <DependentUpon>201608011922505_subdomainchanges.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608011925594_subdomainFK.resx">
-      <DependentUpon>201608011925594_subdomainFK.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608011952084_keywordsInitial.resx">
-      <DependentUpon>201608011952084_keywordsInitial.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608012353287_webpagedata.resx">
-      <DependentUpon>201608012353287_webpagedata.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201608160134065_ReInitializeDB.resx">
+      <DependentUpon>201608160134065_ReInitializeDB.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

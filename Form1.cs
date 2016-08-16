@@ -46,7 +46,7 @@ namespace Browser
             {
                 EventLog.AppendLog("Page Loaded");
 
-                WebPage webPage = await Manager.ReceiveWebPage(webBrowser1);
+                WebPage webPage =  Manager.ReceiveWebPage(webBrowser1);
 
                 textBox2.Text = webPage.Url.ToString();
 
