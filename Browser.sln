@@ -11,6 +11,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BrowserController", "Manage
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccess", "DataAccess\DataAccess.csproj", "{B8182D4C-FE42-4BCC-AE85-FBFAACE0C9B2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataMaintenance", "C:\Users\samar\OneDrive\Documents\Visual Studio 2015\Projects\DataMaintenance\DataMaintenance.csproj", "{118E71B5-D8B6-49B7-836B-8DAE6B7AEE2E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "Core\Core.csproj", "{46A2EC54-0F04-4D2F-B52B-3D66A17089F1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -33,6 +37,14 @@ Global
 		{B8182D4C-FE42-4BCC-AE85-FBFAACE0C9B2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B8182D4C-FE42-4BCC-AE85-FBFAACE0C9B2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B8182D4C-FE42-4BCC-AE85-FBFAACE0C9B2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{118E71B5-D8B6-49B7-836B-8DAE6B7AEE2E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{118E71B5-D8B6-49B7-836B-8DAE6B7AEE2E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{118E71B5-D8B6-49B7-836B-8DAE6B7AEE2E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{118E71B5-D8B6-49B7-836B-8DAE6B7AEE2E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{46A2EC54-0F04-4D2F-B52B-3D66A17089F1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{46A2EC54-0F04-4D2F-B52B-3D66A17089F1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{46A2EC54-0F04-4D2F-B52B-3D66A17089F1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{46A2EC54-0F04-4D2F-B52B-3D66A17089F1}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

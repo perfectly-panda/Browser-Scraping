@@ -33,3 +33,5 @@ D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.pdb
 D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
 D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.ReInitializeDB.resources
 D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.csproj.GenerateResource.Cache
+D:\Browser-Scraping\DataAccess\bin\Debug\Core.dll
+D:\Browser-Scraping\DataAccess\bin\Debug\Core.pdb
