@@ -13,7 +13,8 @@ namespace Manager
     public class SaveData
     {
         private Autofac.IContainer Container { get; set; }
-        private Parser.WebPage WebPage { get; set; } 
+        private Parser.WebPage WebPage { get; set; }
+        private DataAccess.Entities.Website Website { get; set; }
 
         public SaveData(Parser.WebPage webPage, Autofac.IContainer container)
         {
@@ -23,13 +24,14 @@ namespace Manager
 
         public async void SaveAll()
         {
-            SaveDomain();
+            await SaveDomain();
             await SaveSubDomain();
             await SaveKeywords(5);
             await SaveWebPage();
+
         }
 
-        public void SaveDomain()
+        public async Task<int> SaveDomain()
         {
             using (var scope = Container.BeginLifetimeScope())
             {
@@ -39,41 +41,95 @@ namespace Manager
                 website.Domain = this.CleanDomain;
 
                 repo.Add(website);
+                return await repo.Save();
             }
         }
 
         public async Task<int> SaveSubDomain()
         {
-            if (!String.IsNullOrWhiteSpace(this.WebPage.SubDomain))
+            using (var scope = Container.BeginLifetimeScope())
             {
-                return await WebsiteRepository.AddSubDomain(this.WebPage.SubDomain, this.CleanDomain);
-            }
-            else
-            {
-                return 0;
+                var repo = scope.Resolve<ISubDomainRepository>();
+
+                await CheckWebSite();
+
+
+                if (!String.IsNullOrWhiteSpace(this.WebPage.SubDomain))
+                {
+                    DataAccess.Entities.SubDomain subDomain = new SubDomain();
+                    subDomain.Domain = this.WebPage.SubDomain;
+                    subDomain.Website = this.Website;
+                    repo.AddIfNew(subDomain);
+                    return await repo.Save();
+                }
+                else
+                {
+                    return 0;
+                }
             }
 
         }
 
         public async Task<int> SaveKeywords(int count)
         {
-            var keywords = this.WebPage.Keywords.Take(count).Select(k => k.Key).ToList();
+            using (var scope = Container.BeginLifetimeScope())
+            {
+                var repo = scope.Resolve<IKeywordRepository>();
+                var webKeyRepo = scope.Resolve<IWebPageKeywordRepository>();
+                var webrepo = scope.Resolve<IWebPageRepository>();
+                var keywords = this.WebPage.Keywords.ToList();
 
-            var repository = new KeywordRepository();
+                DataAccess.Entities.WebPage webPage = await webrepo.FindByUrl(this.CleanDomain);
 
-            await repository.AddKeywords(keywords);
-            return await repository.AddKeywordsToWebsite(this.WebPage.Keywords.Take(count).ToDictionary(v => v.Key, v => v.Value), this.CleanDomain);
+                if(webPage == null)
+                {
+                    await this.SaveWebPage();
+                    webPage = await webrepo.FindByUrl(this.CleanDomain);
+                }
 
+
+                foreach (var word in keywords)
+                {
+                    Keyword keyword = new Keyword();
+                    keyword.Value = word.Key;
+                    repo.AddIfNew(keyword);
+
+                    WebPageKeywords webKey = new WebPageKeywords();
+                    webKey.Keyword = keyword;
+                    webKey.WebPage = webPage;
+                    webKey.Count = word.Value;
+
+                    webKeyRepo.AddOrUpdate(webKey);
+                }
+
+                return await repo.Save();
+            }
         }
 
         public async Task<int> SaveWebPage()
         {
-            return await WebPageRepository.AddWebPage(this.WebPage.SubDomain,
-                this.CleanDomain,
-                this.WebPage.Url.OriginalString,
-                this.WebPage.OriginalDocument.DocumentNode.InnerHtml,
-                this.WebPage.InjectedDocument.DocumentNode.InnerHtml,
-                this.WebPage.PageTitle);
+            using (var scope = Container.BeginLifetimeScope())
+            {
+                var repo = scope.Resolve<IWebPageRepository>();
+                var subDomRepo = scope.Resolve<ISubDomainRepository>();
+
+                await CheckWebSite();
+
+                DataAccess.Entities.WebPage webPage = new DataAccess.Entities.WebPage();
+
+                webPage.SubDomain = await subDomRepo.FindByDomain(this.WebPage.SubDomain, this.Website);
+                webPage.Website = this.Website;
+                webPage.Url = this.WebPage.Url.OriginalString;
+                webPage.FullHtml = this.WebPage.OriginalDocument.DocumentNode.InnerHtml;
+                webPage.BodyHtml = this.WebPage.InjectedDocument.DocumentNode.InnerHtml;
+                webPage.Title = this.WebPage.PageTitle;
+
+                webPage.LastAccessed = DateTime.UtcNow;
+
+                repo.AddOrUpdate(webPage);
+
+                return await repo.Save();
+            }
         }
 
         private string CleanDomain
@@ -88,6 +144,18 @@ namespace Manager
                 }
 
                 return domain;
+            }
+        }
+
+        private async Task CheckWebSite()
+        {
+            if (this.Website == null)
+            {
+                using (var scope = Container.BeginLifetimeScope())
+                {
+                    var website = scope.Resolve<IWebsiteRepository>();
+                    this.Website = await website.FindByUrl(this.CleanDomain);
+                }
             }
         }
     }

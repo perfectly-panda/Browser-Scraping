@@ -28,6 +28,11 @@ namespace DataAccess.Repository
             DbContext.Set<T>().AddIfNotExists(item);
         }
 
+        public virtual void AddOrUpdate(T item)
+        {
+            throw new NotImplementedException();
+        }
+
         public void Delete(Guid id)
         {
             var item = new T { Id = id };

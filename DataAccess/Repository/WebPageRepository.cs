@@ -1,4 +1,6 @@
-﻿using DataAccess.Entities;
+﻿using System;
+using System.Threading.Tasks;
+using DataAccess.Entities;
 
 namespace DataAccess.Repository
 {
@@ -12,5 +14,9 @@ namespace DataAccess.Repository
             DbContext.Set<WebPage>().AddIfNotExists(item, i => i.Url.Contains(item.Url));
         }
 
+        public Task<WebPage> FindByUrl(string url)
+        {
+            throw new NotImplementedException();
+        }
     }
 }

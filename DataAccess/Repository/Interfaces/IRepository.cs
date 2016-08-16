@@ -14,6 +14,8 @@ namespace DataAccess.Repository
 
         void AddIfNew(T item);
 
+        void AddOrUpdate(T item);
+
         void Update(T item);
 
         void Delete(Guid id);

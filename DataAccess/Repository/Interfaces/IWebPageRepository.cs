@@ -9,5 +9,6 @@ namespace DataAccess.Repository
 {
     public interface IWebPageRepository: IRepository<WebPage>
     {
+        Task<WebPage> FindByUrl(string url);
     }
 }

@@ -14,5 +14,10 @@ namespace DataAccess.Repository
         {
             DbContext.Set<Website>().AddIfNotExists(item, i => i.Domain.Contains(item.Domain));
         }
+
+        public Task<Website> FindByUrl(string url)
+        {
+            return DbContext.Set<Website>().Where(w => w.Domain == url).FirstOrDefaultAsync();
+        }
     }
 }

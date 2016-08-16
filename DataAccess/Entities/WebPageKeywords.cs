@@ -18,5 +18,8 @@ namespace DataAccess.Entities
 
         [Required]
         public Keyword Keyword { get; set; }
+
+        [Required]
+        public int Count { get; set; }
     }
 }
