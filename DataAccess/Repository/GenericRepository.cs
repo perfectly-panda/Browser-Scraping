@@ -57,14 +57,19 @@ namespace DataAccess.Repository
             DbContext.Entry(item).State = EntityState.Modified;
         }
 
-        public async Task<int> Save()
+        public async Task Save()
         {
-            return await DbContext.SaveChangesAsync();
+            await DbContext.SaveChangesAsync();
         }
 
         public IEnumerable<T> Get(Expression<Func<T, bool>> predicate)
         {
             return DbContext.Set<T>().Get(predicate);
+        }
+
+        Task<T> IRepository<T>.FindById(Guid id)
+        {
+            throw new NotImplementedException();
         }
     }
 }
