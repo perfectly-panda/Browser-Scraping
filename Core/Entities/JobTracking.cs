@@ -8,21 +8,15 @@ using System.Threading.Tasks;
 
 namespace Core.Entities
 {
-    class Links : IEntity
+    class JobTracking
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
 
         [Required]
-        public WebPage WebPage { get; set; }
+        public int JobType { get; set; }
 
         [Required]
-        public string URL { get; set; }
-
-        public string LinkText { get; set; }
-
-        public bool? Internal { get; set; }
-
-        public bool? Processed { get; set; }
+        public DateTime LastRan { get; set; }
     }
 }

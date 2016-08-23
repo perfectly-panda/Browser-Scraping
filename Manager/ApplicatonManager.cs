@@ -17,7 +17,9 @@ namespace Manager
 
         public ParsedWebpage ReceiveWebPage(WebBrowser webBrowser)
         {
-            this.parser =  new Parse(webBrowser);
+            this.parser =  new Parse();
+
+            this.parser.ParseWebpage(webBrowser);
 
             return parser.Webpage;
         }

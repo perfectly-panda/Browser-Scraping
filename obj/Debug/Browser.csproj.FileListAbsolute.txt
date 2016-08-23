@@ -13,18 +13,6 @@ c:\users\samara\documents\visual studio 2015\Projects\Browser\Browser\bin\Debug\
 C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\Browser.exe.config
 C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\obj\Debug\Browser.exe
 C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\obj\Debug\Browser.pdb
-D:\Browser-Scraping\bin\Debug\Browser.exe.config
-D:\Browser-Scraping\obj\Debug\Browser.csprojResolveAssemblyReference.cache
-D:\Browser-Scraping\obj\Debug\Browser.Form1.resources
-D:\Browser-Scraping\obj\Debug\Browser.Properties.Resources.resources
-D:\Browser-Scraping\obj\Debug\Browser.csproj.GenerateResource.Cache
-D:\Browser-Scraping\bin\Debug\Browser.exe
-D:\Browser-Scraping\bin\Debug\Browser.pdb
-D:\Browser-Scraping\bin\Debug\HtmlAgilityPack.dll
-D:\Browser-Scraping\bin\Debug\HtmlAgilityPack.pdb
-D:\Browser-Scraping\bin\Debug\HtmlAgilityPack.xml
-D:\Browser-Scraping\obj\Debug\Browser.exe
-D:\Browser-Scraping\obj\Debug\Browser.pdb
 C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\Browser.exe
 C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\Browser.pdb
 C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\HtmlAgilityPack.dll
@@ -51,24 +39,28 @@ C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug
 C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\Microsoft.AspNet.Scaffolding.12.0.xml
 C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\EntityFramework.SqlServer.dll
 C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\EntityFramework.SqlServer.xml
+D:\Browser-Scraping\obj\Debug\Browser.csprojResolveAssemblyReference.cache
+D:\Browser-Scraping\obj\Debug\Browser.Form1.resources
+D:\Browser-Scraping\obj\Debug\Browser.Properties.Resources.resources
+D:\Browser-Scraping\obj\Debug\Browser.csproj.GenerateResource.Cache
+D:\Browser-Scraping\bin\Debug\Browser.exe.config
+D:\Browser-Scraping\bin\Debug\Browser.exe
+D:\Browser-Scraping\bin\Debug\Browser.pdb
+D:\Browser-Scraping\bin\Debug\Core.dll
+D:\Browser-Scraping\bin\Debug\HtmlAgilityPack.dll
 D:\Browser-Scraping\bin\Debug\Manager.dll
 D:\Browser-Scraping\bin\Debug\Microsoft.AspNet.Scaffolding.EntityFramework.12.0.dll
 D:\Browser-Scraping\bin\Debug\Parser.dll
-D:\Browser-Scraping\bin\Debug\DataAccess.dll
 D:\Browser-Scraping\bin\Debug\Microsoft.AspNet.Scaffolding.12.0.dll
 D:\Browser-Scraping\bin\Debug\EnvDTE.dll
 D:\Browser-Scraping\bin\Debug\EnvDTE80.dll
-D:\Browser-Scraping\bin\Debug\EntityFramework.dll
-D:\Browser-Scraping\bin\Debug\EntityFramework.SqlServer.dll
 D:\Browser-Scraping\bin\Debug\stdole.dll
+D:\Browser-Scraping\bin\Debug\Core.pdb
 D:\Browser-Scraping\bin\Debug\Manager.pdb
 D:\Browser-Scraping\bin\Debug\Parser.pdb
+D:\Browser-Scraping\bin\Debug\HtmlAgilityPack.pdb
+D:\Browser-Scraping\bin\Debug\HtmlAgilityPack.xml
 D:\Browser-Scraping\bin\Debug\Microsoft.AspNet.Scaffolding.EntityFramework.12.0.xml
-D:\Browser-Scraping\bin\Debug\DataAccess.pdb
 D:\Browser-Scraping\bin\Debug\Microsoft.AspNet.Scaffolding.12.0.xml
-D:\Browser-Scraping\bin\Debug\EntityFramework.xml
-D:\Browser-Scraping\bin\Debug\EntityFramework.SqlServer.xml
-D:\Browser-Scraping\bin\Debug\Autofac.dll
-D:\Browser-Scraping\bin\Debug\Autofac.xml
-D:\Browser-Scraping\bin\Debug\Core.dll
-D:\Browser-Scraping\bin\Debug\Core.pdb
+D:\Browser-Scraping\obj\Debug\Browser.exe
+D:\Browser-Scraping\obj\Debug\Browser.pdb

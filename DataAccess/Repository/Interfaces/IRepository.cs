@@ -25,6 +25,6 @@ namespace DataAccess.Repository
 
         Task<T> FindById(Guid id);
 
-        Task<int> Save();
+        Task Save();
     }
 }

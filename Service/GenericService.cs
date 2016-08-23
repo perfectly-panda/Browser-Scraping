@@ -12,7 +12,7 @@ namespace Service
 {
     public class GenericService<T, U> where T : class, IEntity, new() where U: IRepository<T>
     {
-        private IContainer Container { get; set; }
+        protected IContainer Container { get; set; }
 
         public GenericService()
         {
@@ -21,17 +21,15 @@ namespace Service
 
         public async virtual Task<T> Add(T item)
         {
-            throw new NotImplementedException();
-        }
+            using (var scope = Container.BeginLifetimeScope())
+            {
+                var tScope = scope.Resolve<U>();
+                tScope.AddIfNew(item);
 
-        public async virtual Task<T> AddIfNew(T item)
-        {
-            throw new NotImplementedException();
-        }
+                await tScope.Save();
 
-        public async virtual Task<T> AddOrUpdate(T item)
-        {
-            throw new NotImplementedException();
+                return item;
+            }
         }
 
         public async virtual Task Delete(Guid id)

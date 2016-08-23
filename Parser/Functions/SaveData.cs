@@ -1,4 +1,4 @@
-﻿using Autofac;
+﻿
 using Core.Entities;
 using DataAccess.Repository;
 using Parser;

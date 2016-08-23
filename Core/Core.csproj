@@ -49,10 +49,12 @@
     <Compile Include="Constants\HeaderType.cs" />
     <Compile Include="Constants\JobType.cs" />
     <Compile Include="Constants\PageType.cs" />
+    <Compile Include="Constants\WebpageExtensions.cs" />
     <Compile Include="Entities\Headers.cs" />
     <Compile Include="Entities\IEntity.cs" />
     <Compile Include="Entities\IgnoreList.cs" />
     <Compile Include="Entities\JobList.cs" />
+    <Compile Include="Entities\JobTracking.cs" />
     <Compile Include="Entities\Keyword.cs" />
     <Compile Include="Entities\Links.cs" />
     <Compile Include="Entities\RelatedKeywords.cs" />
