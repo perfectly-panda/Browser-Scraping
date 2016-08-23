@@ -30,6 +30,7 @@ namespace Browser
             LogView.DataSource = EventLog.Log;
 
             this.Manager = manager;
+            Manager.AddBrowser(webBrowser1);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -37,7 +38,7 @@ namespace Browser
 
         }
 
-        private  void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
+        private async void webBrowser1_DocumentCompleted(object sender, WebBrowserDocumentCompletedEventArgs e)
         {
             if (webBrowser1.ReadyState != WebBrowserReadyState.Complete || e.Url.AbsolutePath != (sender as WebBrowser).Url.AbsolutePath)
             {
@@ -47,7 +48,7 @@ namespace Browser
             {
                 EventLog.AppendLog("Page Loaded");
 
-                ParsedWebpage webPage =  Manager.ReceiveWebPage(webBrowser1);
+                ParsedWebpage webPage =  await Manager.ReceiveWebPage();
 
                 textBox2.Text = webPage.Url.ToString();
 
@@ -65,7 +66,14 @@ namespace Browser
                     EventLog.AppendLog(webPage.BlogLink);
                 }
 
-                button1.Enabled = true;
+                if (Manager.Complete)
+                {
+                    button1.Enabled = true;
+                }
+                else
+                {
+                    Manager.ExecuteNextTask();
+                }
             }
 
         }

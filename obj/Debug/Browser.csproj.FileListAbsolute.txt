@@ -64,3 +64,13 @@ D:\Browser-Scraping\bin\Debug\Microsoft.AspNet.Scaffolding.EntityFramework.12.0.
 D:\Browser-Scraping\bin\Debug\Microsoft.AspNet.Scaffolding.12.0.xml
 D:\Browser-Scraping\obj\Debug\Browser.exe
 D:\Browser-Scraping\obj\Debug\Browser.pdb
+D:\Browser-Scraping\bin\Debug\Service.dll
+D:\Browser-Scraping\bin\Debug\DataAccess.dll
+D:\Browser-Scraping\bin\Debug\Autofac.dll
+D:\Browser-Scraping\bin\Debug\EntityFramework.dll
+D:\Browser-Scraping\bin\Debug\EntityFramework.SqlServer.dll
+D:\Browser-Scraping\bin\Debug\Service.pdb
+D:\Browser-Scraping\bin\Debug\DataAccess.pdb
+D:\Browser-Scraping\bin\Debug\Autofac.xml
+D:\Browser-Scraping\bin\Debug\EntityFramework.xml
+D:\Browser-Scraping\bin\Debug\EntityFramework.SqlServer.xml

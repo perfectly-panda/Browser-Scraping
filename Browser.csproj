@@ -91,7 +91,7 @@
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="Core\Core.csproj">
-      <Project>{46a2ec54-0f04-4d2f-b52b-3d66a17089f1}</Project>
+      <Project>{46A2EC54-0F04-4D2F-B52B-3D66A17089F1}</Project>
       <Name>Core</Name>
     </ProjectReference>
     <ProjectReference Include="Manager\BrowserController.csproj">

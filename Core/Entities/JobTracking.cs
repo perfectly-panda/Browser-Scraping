@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace Core.Entities
 {
-    class JobTracking
+    public class JobTracking
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }

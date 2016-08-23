@@ -148,20 +148,7 @@ namespace Parser
             }
         }
 
-        private string CleanDomain
-        {
-            get
-            {
-                var domain = this.WebPage.Domain;
-
-                if (this.WebPage.SubDomain != "")
-                {
-                    domain = domain.Replace(this.WebPage.SubDomain + ".", "");
-                }
-
-                return domain;
-            }
-        }
+        
 
         private async Task CheckWebSite()
         {

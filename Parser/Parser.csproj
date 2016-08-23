@@ -58,6 +58,10 @@
       <Project>{b8182d4c-fe42-4bcc-ae85-fbfaace0c9b2}</Project>
       <Name>DataAccess</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Service\Service.csproj">
+      <Project>{F56497E5-79E5-461A-8F5A-46588A98931E}</Project>
+      <Name>Service</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />

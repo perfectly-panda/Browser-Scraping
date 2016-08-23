@@ -36,3 +36,4 @@ D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.update.resources
 D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.csproj.GenerateResource.Cache
 D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.dll
 D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.pdb
+D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.Jobs.resources

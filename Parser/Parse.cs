@@ -18,25 +18,19 @@ namespace Parser
 
         private Website Website { get; set; }
 
+        WebsiteService _websiteService;
         private WebsiteService WebsiteService
         { get
             {
-                if (this.WebsiteService == null)
-                    { this.WebsiteService = new WebsiteService(); }
-                return this.WebsiteService;
-            }
-
-            set
-            {
-                this.WebsiteService = value;
+                if (_websiteService == null)
+                { _websiteService = new WebsiteService(); }
+                return _websiteService;
             }
         }
 
         public async void ParseWebpage(System.Windows.Forms.WebBrowser webBrowser)
         {
             this.ParsedWebpage = new ParsedWebpage(webBrowser);
-
-            this.WebsiteService = new WebsiteService();
 
             this.Website = await SaveWebsite();
         }

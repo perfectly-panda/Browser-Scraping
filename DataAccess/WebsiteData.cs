@@ -20,6 +20,8 @@ namespace DataAccess
         public virtual DbSet<WebPage> WebPage { get; set; }
         public virtual DbSet<WebPageKeywords> WebPageKeywords { get; set; } 
         public virtual DbSet<WebsiteKeywords> WebsiteKeywords { get; set; }
+        public virtual DbSet<JobList> JobList { get; set; }
+        public virtual DbSet<JobTracking> JobTracking { get; set; }
 
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
