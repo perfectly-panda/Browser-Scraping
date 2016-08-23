@@ -9,6 +9,7 @@ using System.ComponentModel;
 using Manager;
 using Parser;
 using Core;
+using DataMaintenance;
 
 namespace Browser
 {
@@ -31,6 +32,8 @@ namespace Browser
 
             this.Manager = manager;
             Manager.AddBrowser(webBrowser1);
+
+            backgroundWorker1.RunWorkerAsync();
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -80,9 +83,12 @@ namespace Browser
 
         private void button1_Click(object sender, EventArgs e)
         {
-            EventLog.AppendLog("Navigating to " + textBox1.Text);
-            webBrowser1.Navigate(textBox1.Text);
-            button1.Enabled = false;
+            if (!String.IsNullOrWhiteSpace(textBox1.Text))
+            {
+                EventLog.AppendLog("Navigating to " + textBox1.Text);
+                webBrowser1.Navigate(textBox1.Text);
+                button1.Enabled = false;
+            }
         }
 
         private void textBox1_TextChanged(object sender, EventArgs e)
@@ -125,6 +131,13 @@ namespace Browser
 
                 IgnoreListEntry.Text = null;
             }
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+            var jobManager = new JobManager();
+
+            jobManager.Start();
         }
     }
 }

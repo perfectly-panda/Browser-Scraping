@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using System.Collections.Generic;
 using Core.Entities;
 using Core;
+using System;
 
 namespace Manager
 {
@@ -18,6 +19,8 @@ namespace Manager
         public bool Complete { get { return JobList == null || JobList.Count == 0; } }
 
         private List<JobList> JobList { get; set; }
+
+        private Guid CurrentJob { get; set; }
 
         public void AddBrowser(WebBrowser webBrowser)
         {

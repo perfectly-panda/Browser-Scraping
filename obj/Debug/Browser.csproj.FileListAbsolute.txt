@@ -74,3 +74,5 @@ D:\Browser-Scraping\bin\Debug\DataAccess.pdb
 D:\Browser-Scraping\bin\Debug\Autofac.xml
 D:\Browser-Scraping\bin\Debug\EntityFramework.xml
 D:\Browser-Scraping\bin\Debug\EntityFramework.SqlServer.xml
+D:\Browser-Scraping\bin\Debug\DataMaintenance.dll
+D:\Browser-Scraping\bin\Debug\DataMaintenance.pdb
