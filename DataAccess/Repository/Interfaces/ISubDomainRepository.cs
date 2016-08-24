@@ -9,6 +9,6 @@ namespace DataAccess.Repository
 {
     public interface ISubDomainRepository : IRepository<SubDomain>
     {
-        Task<SubDomain> FindByDomain(string domain, Website website);
+        IEnumerable<SubDomain> FindByDomain(Guid domain);
     }
 }

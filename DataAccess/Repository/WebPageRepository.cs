@@ -4,9 +4,9 @@ using Core.Entities;
 
 namespace DataAccess.Repository
 {
-    public class WebPageRepository : GenericRepository<WebPage>, IWebPageRepository
+    public class WebpageRepository : GenericRepository<WebPage>, IWebPageRepository
     {
-        public WebPageRepository(IDbContext context) : base(context) { }
+        public WebpageRepository(IDbContext context) : base(context) { }
 
 
         public override void AddIfNew(WebPage item)
