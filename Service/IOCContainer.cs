@@ -20,7 +20,7 @@ namespace DataAccess
                 builder.RegisterType<WebsiteDataContext>().As<IDbContext>();
                 builder.RegisterType<IgnoreListRepository>().As<IIgnoreListRepository>();
                 builder.RegisterType<WebsiteRepository>().As<IWebsiteRepository>();
-                builder.RegisterType<WebPageRepository>().As<IWebPageRepository>();
+                builder.RegisterType<WebpageRepository>().As<IWebPageRepository>();
                 builder.RegisterType<SubDomainRepository>().As<ISubDomainRepository>();
                 builder.RegisterType<KeywordRepository>().As<IKeywordRepository>();
                 Container = builder.Build();

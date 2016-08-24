@@ -59,17 +59,32 @@ namespace DataAccess.Repository
 
         public async Task Save()
         {
-            await DbContext.SaveChangesAsync();
+            try
+            {
+                await DbContext.SaveChangesAsync();
+            }
+            catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
+            {
+                Exception raise = dbEx;
+                foreach (var validationErrors in dbEx.EntityValidationErrors)
+                {
+                    foreach (var validationError in validationErrors.ValidationErrors)
+                    {
+                        string message = string.Format("{0}:{1}",
+                            validationErrors.Entry.Entity.ToString(),
+                            validationError.ErrorMessage);
+                        // raise a new exception nesting
+                        // the current instance as InnerException
+                        raise = new InvalidOperationException(message, raise);
+                    }
+                }
+                throw raise;
+            }
         }
 
         public IEnumerable<T> Get(Expression<Func<T, bool>> predicate)
         {
             return DbContext.Set<T>().Get(predicate);
-        }
-
-        Task<T> IRepository<T>.FindById(Guid id)
-        {
-            throw new NotImplementedException();
         }
     }
 }

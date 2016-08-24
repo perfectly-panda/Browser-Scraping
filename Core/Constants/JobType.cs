@@ -8,11 +8,12 @@ namespace Core.Constants
 {
     public enum JobType
     {
-        ReadWebPage,
-        RebuildBaseKeywords,
-        RebuildWebpageKeywords,
-        RebuildWebsiteKeywords,
-        RebuildRelatedKeywords,
-        CheckLinks
+        ReadWebpage = 0,
+        ReadWebsite = 1,
+        RebuildBaseKeywords = 2,
+        RebuildWebpageKeywords = 3,
+        RebuildWebsiteKeywords = 4,
+        RebuildRelatedKeywords = 5,
+        CheckLinks = 6
     }
 }

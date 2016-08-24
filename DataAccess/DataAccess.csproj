@@ -79,10 +79,10 @@
     <Compile Include="Repository\Interfaces\ISubDomainRepository.cs" />
     <Compile Include="Repository\Interfaces\IWebsiteRepository.cs" />
     <Compile Include="Repository\Interfaces\IWebPageRepository.cs" />
-    <Compile Include="Repository\WebPageKeywordRepository .cs" />
+    <Compile Include="Repository\WebpageKeywordRepository .cs" />
     <Compile Include="Repository\KeywordRepository.cs" />
     <Compile Include="Repository\SubDomainRepository .cs" />
-    <Compile Include="Repository\WebPageRepository.cs" />
+    <Compile Include="Repository\WebpageRepository.cs" />
     <Compile Include="Repository\WebsiteRepository.cs" />
     <Compile Include="WebsiteData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -12,5 +12,14 @@ namespace Service
 {
     public class WebsiteService: GenericService<Website, IWebsiteRepository>
     {
+        public async Task<Website> FindByUrl(string website)
+        {
+            using (var scope = Container.BeginLifetimeScope())
+            {
+                var tScope = scope.Resolve<IWebsiteRepository>();
+
+                return await tScope.FindByUrl(website);
+            }
+        }
     }
 }

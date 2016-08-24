@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Threading.Tasks;
 using Core.Entities;
+using System.Collections.Generic;
 
 namespace DataAccess.Repository
 {
@@ -14,9 +15,9 @@ namespace DataAccess.Repository
             DbContext.Set<SubDomain>().AddIfNotExists(item, i => i.Domain.Contains(item.Domain) && i.Website == item.Website);
         }
 
-        public Task<SubDomain> FindByDomain(string domain, Website website)
+        public IEnumerable<SubDomain> FindByDomain(Guid domain)
         {
-            throw new NotImplementedException();
+            return  DbContext.Set<SubDomain>().Get(i=> i.Website.Id == domain);
         }
     }
 }

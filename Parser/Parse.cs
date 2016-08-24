@@ -17,6 +17,7 @@ namespace Parser
         public ParsedWebpage ParsedWebpage { get; set; }
 
         private Website Website { get; set; }
+        private SubDomain SubDomain { get; set; }
 
         WebsiteService _websiteService;
         private WebsiteService WebsiteService
@@ -28,20 +29,48 @@ namespace Parser
             }
         }
 
+        SubDomainService _subDomainService;
+        private SubDomainService SubDomainService
+        {
+            get
+            {
+                if (_subDomainService == null)
+                { _subDomainService = new SubDomainService(); }
+                return _subDomainService;
+            }
+        }
+
         public async void ParseWebpage(System.Windows.Forms.WebBrowser webBrowser)
         {
             this.ParsedWebpage = new ParsedWebpage(webBrowser);
 
             this.Website = await SaveWebsite();
+            this.SubDomain = await SaveSubDomain();
         }
 
-        private Task<Website> SaveWebsite()
+        private async Task<Website> SaveWebsite()
         {
             var website = new Website();
 
             website.Domain = this.CleanDomain;
 
-            return WebsiteService.Add(website);
+            return await WebsiteService.Add(website);
+        }
+
+        private async Task<SubDomain> SaveSubDomain()
+        {
+            var subDomain = new SubDomain();
+
+            subDomain.Domain = this.ParsedWebpage.SubDomain;
+            
+            if(this.Website == null)
+            {
+                this.Website = await SaveWebsite();
+            }
+
+            subDomain.Website = this.Website;
+
+            return await SubDomainService.Add(subDomain);
         }
 
         private string CleanDomain
