@@ -37,3 +37,4 @@ D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.csproj.GenerateResource.Cach
 D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.dll
 D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.pdb
 D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.Jobs.resources
+D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.subdomainEmpty.resources

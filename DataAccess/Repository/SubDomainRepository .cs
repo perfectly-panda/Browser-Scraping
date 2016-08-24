@@ -12,7 +12,7 @@ namespace DataAccess.Repository
 
         public override void AddIfNew(SubDomain item)
         {
-            DbContext.Set<SubDomain>().AddIfNotExists(item, i => i.Domain.Contains(item.Domain) && i.Website == item.Website);
+            DbContext.Set<SubDomain>().AddIfNotExists(item, i => i.Domain.Contains(item.Domain) && i.Website.Id == item.Website.Id);
         }
 
         public IEnumerable<SubDomain> FindByDomain(Guid domain)

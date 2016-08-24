@@ -31,7 +31,9 @@ namespace DataAccess.Repository
 
         public virtual void AddOrUpdate(T item)
         {
-            throw new NotImplementedException();
+            DbContext.Set<T>().AddOrUpdate(item);
+            DbContext.Entry<T>(item).State = EntityState.Modified;
+
         }
 
         public void Delete(Guid id)
@@ -85,6 +87,11 @@ namespace DataAccess.Repository
         public IEnumerable<T> Get(Expression<Func<T, bool>> predicate)
         {
             return DbContext.Set<T>().Get(predicate);
+        }
+
+        public T Create()
+        {
+            return DbContext.Set<T>().Create();
         }
     }
 }

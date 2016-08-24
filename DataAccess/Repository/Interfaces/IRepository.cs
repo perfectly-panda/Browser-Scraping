@@ -21,6 +21,8 @@ namespace DataAccess.Repository
 
         void Update(T item);
 
+        T Create();
+
         void Delete(Guid id);
 
         T FindById(Guid id);

@@ -9,7 +9,6 @@ namespace Core.Entities
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
 
-        [Required]
         public string Domain { get; set; }
 
         [Required]

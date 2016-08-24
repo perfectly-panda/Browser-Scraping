@@ -15,5 +15,7 @@ namespace Core.Entities
 
         [Required]
         public String Domain { get; set; }
+
+        public List<SubDomain> SubDomains {get; set; }
     }
 }

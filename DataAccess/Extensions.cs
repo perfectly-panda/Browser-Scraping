@@ -17,6 +17,12 @@ namespace DataAccess
             return !exists ?  dbSet.Add(entity) : null;
         }
 
+        public static T AddOrUpdate<T>(this DbSet<T> dbSet, T entity, Expression<Func<T, bool>> predicate = null) where T : class, new()
+        {
+            var exists = predicate != null ? dbSet.Any(predicate) : dbSet.Any();
+            return !exists ? dbSet.Add(entity) :  dbSet.Attach(entity);
+        }
+
         public static IEnumerable<T> Get<T>(this DbSet<T> dbSet, Expression<Func<T, bool>> predicate = null) where T : class, new()
         {
             return dbSet.Where(predicate);

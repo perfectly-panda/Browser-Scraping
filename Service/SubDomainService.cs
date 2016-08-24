@@ -16,6 +16,7 @@ namespace Service
             using (var scope = Container.BeginLifetimeScope())
             {
                 var tScope = scope.Resolve<ISubDomainRepository>();
+
                 tScope.AddIfNew(item);
 
                 await tScope.Save();

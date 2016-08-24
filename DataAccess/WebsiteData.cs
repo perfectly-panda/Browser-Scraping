@@ -31,6 +31,10 @@ namespace DataAccess
                 .HasRequired<Keyword>(k => k.PrimaryKeyword)
                 .WithRequiredDependent()
                 .WillCascadeOnDelete(false);
+
+            modelBuilder.Entity<SubDomain>()
+                .HasRequired(s => s.Website)
+                .WithMany(w => w.SubDomains);
         }
     }
 }

@@ -45,7 +45,7 @@ namespace Parser
             this.ParsedWebpage = new ParsedWebpage(webBrowser);
 
             this.Website = await SaveWebsite();
-            this.SubDomain = await SaveSubDomain();
+            await SaveSubDomain();
         }
 
         private async Task<Website> SaveWebsite()
@@ -59,18 +59,18 @@ namespace Parser
 
         private async Task<SubDomain> SaveSubDomain()
         {
-            var subDomain = new SubDomain();
+                var subDomain = new SubDomain();
 
-            subDomain.Domain = this.ParsedWebpage.SubDomain;
-            
-            if(this.Website == null)
-            {
-                this.Website = await SaveWebsite();
-            }
+                subDomain.Domain = this.ParsedWebpage.SubDomain;
 
-            subDomain.Website = this.Website;
+                if (this.Website.Id == null || this.Website.Id == Guid.Empty)
+                {
+                    this.Website = await WebsiteService.FindByUrl(this.CleanDomain);
+                }
 
-            return await SubDomainService.Add(subDomain);
+                subDomain.Website = this.Website;
+
+                return await SubDomainService.Add(subDomain);
         }
 
         private string CleanDomain

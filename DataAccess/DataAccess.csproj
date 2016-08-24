@@ -69,6 +69,10 @@
     <Compile Include="Migrations\201608232142277_Jobs.Designer.cs">
       <DependentUpon>201608232142277_Jobs.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201608240122463_subdomainEmpty.cs" />
+    <Compile Include="Migrations\201608240122463_subdomainEmpty.Designer.cs">
+      <DependentUpon>201608240122463_subdomainEmpty.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
     <Compile Include="Repository\IgnoreListRepository.cs" />
@@ -103,6 +107,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201608232142277_Jobs.resx">
       <DependentUpon>201608232142277_Jobs.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608240122463_subdomainEmpty.resx">
+      <DependentUpon>201608240122463_subdomainEmpty.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

@@ -24,6 +24,7 @@ namespace Service
             using (var scope = Container.BeginLifetimeScope())
             {
                 var tScope = scope.Resolve<U>();
+
                 tScope.AddIfNew(item);
 
                 await tScope.Save();
