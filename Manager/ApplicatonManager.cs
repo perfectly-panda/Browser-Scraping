@@ -29,7 +29,7 @@ namespace Manager
 
 
 
-        public async Task<ParsedWebpage> ReceiveWebPage()
+        public async Task<ParsedWebpage> ReceiveWebpage()
         {
             this.parser =  new Parse();
 

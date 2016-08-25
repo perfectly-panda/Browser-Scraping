@@ -15,12 +15,12 @@ namespace Parser
 
         //saving this just to get stuff out of it
         /*private Autofac.IContainer Container { get; set; }
-        private Parser.WebPage WebPage { get; set; }
+        private Parser.Webpage Webpage { get; set; }
         private Core.Entities.Website Website { get; set; }
 
-        public SaveData(Parser.WebPage webPage, Autofac.IContainer container)
+        public SaveData(Parser.Webpage Webpage, Autofac.IContainer container)
         {
-            this.WebPage = webPage;
+            this.Webpage = Webpage;
             this.Container = container;
         }
 
@@ -29,7 +29,7 @@ namespace Parser
             await SaveDomain();
             await SaveSubDomain();
             await SaveKeywords(5);
-            await SaveWebPage();
+            await SaveWebpage();
 
         }
 
@@ -56,10 +56,10 @@ namespace Parser
                 await CheckWebSite();
 
 
-                if (!String.IsNullOrWhiteSpace(this.WebPage.SubDomain))
+                if (!String.IsNullOrWhiteSpace(this.Webpage.SubDomain))
                 {
                     Core.Entities.SubDomain subDomain = new SubDomain();
-                    subDomain.Domain = this.WebPage.SubDomain;
+                    subDomain.Domain = this.Webpage.SubDomain;
                     subDomain.Website = this.Website;
                     repo.AddIfNew(subDomain);
                     return await repo.Save();
@@ -77,16 +77,16 @@ namespace Parser
             using (var scope = Container.BeginLifetimeScope())
             {
                 var repo = scope.Resolve<IKeywordRepository>();
-                var webKeyRepo = scope.Resolve<IWebPageKeywordRepository>();
-                var webrepo = scope.Resolve<IWebPageRepository>();
-                var keywords = this.WebPage.Keywords.ToList();
+                var webKeyRepo = scope.Resolve<IWebpageKeywordRepository>();
+                var webrepo = scope.Resolve<IWebpageRepository>();
+                var keywords = this.Webpage.Keywords.ToList();
 
-                Core.Entities.WebPage webPage = await webrepo.FindByUrl(this.CleanDomain);
+                Core.Entities.Webpage Webpage = await webrepo.FindByUrl(this.CleanDomain);
 
-                if(webPage == null)
+                if(Webpage == null)
                 {
-                    await this.SaveWebPage();
-                    webPage = await webrepo.FindByUrl(this.CleanDomain);
+                    await this.SaveWebpage();
+                    Webpage = await webrepo.FindByUrl(this.CleanDomain);
                 }
 
 
@@ -96,9 +96,9 @@ namespace Parser
                     keyword.Value = word.Key;
                     repo.AddIfNew(keyword);
 
-                    WebPageKeywords webKey = new WebPageKeywords();
+                    WebpageKeywords webKey = new WebpageKeywords();
                     webKey.Keyword = keyword;
-                    webKey.WebPage = webPage;
+                    webKey.Webpage = Webpage;
                     webKey.Count = word.Value;
 
                     webKeyRepo.AddOrUpdate(webKey);
@@ -108,27 +108,27 @@ namespace Parser
             }
         }
 
-        public async Task<int> SaveWebPage()
+        public async Task<int> SaveWebpage()
         {
             using (var scope = Container.BeginLifetimeScope())
             {
-                var repo = scope.Resolve<IWebPageRepository>();
+                var repo = scope.Resolve<IWebpageRepository>();
                 var subDomRepo = scope.Resolve<ISubDomainRepository>();
 
                 await CheckWebSite();
 
-                Core.Entities.WebPage webPage = new Core.Entities.WebPage();
+                Core.Entities.Webpage Webpage = new Core.Entities.Webpage();
 
-                webPage.SubDomain = await subDomRepo.FindByDomain(this.WebPage.SubDomain, this.Website);
-                webPage.Website = this.Website;
-                webPage.Url = this.WebPage.Url.OriginalString;
-                webPage.FullHtml = this.WebPage.OriginalDocument.DocumentNode.InnerHtml;
-                webPage.BodyHtml = this.WebPage.InjectedDocument.DocumentNode.InnerHtml;
-                webPage.Title = this.WebPage.PageTitle;
+                Webpage.SubDomain = await subDomRepo.FindByDomain(this.Webpage.SubDomain, this.Website);
+                Webpage.Website = this.Website;
+                Webpage.Url = this.Webpage.Url.OriginalString;
+                Webpage.FullHtml = this.Webpage.OriginalDocument.DocumentNode.InnerHtml;
+                Webpage.BodyHtml = this.Webpage.InjectedDocument.DocumentNode.InnerHtml;
+                Webpage.Title = this.Webpage.PageTitle;
 
-                webPage.LastAccessed = DateTime.UtcNow;
+                Webpage.LastAccessed = DateTime.UtcNow;
 
-                repo.AddOrUpdate(webPage);
+                repo.AddOrUpdate(Webpage);
 
                 return await repo.Save();
             }

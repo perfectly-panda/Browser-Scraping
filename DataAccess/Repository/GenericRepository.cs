@@ -12,11 +12,13 @@ namespace DataAccess.Repository
 {
     public class GenericRepository<T> : IRepository<T> where T : class, IEntity, new()
     {
-        protected IDbContext DbContext { get; set; }
+        protected DbContext DbContext { get; set; }
 
-        public GenericRepository(IDbContext context)
+        public GenericRepository(DbContext context)
         {
-            DbContext = context;
+            DbContext = (DbContext)context;
+
+            context.Database.Log = Console.Write;
         }
 
         public void Add(T item)
@@ -24,16 +26,16 @@ namespace DataAccess.Repository
             DbContext.Set<T>();
         }
 
-        public virtual void AddIfNew(T item)
+        public virtual T AddIfNew(T item)
         {
-            DbContext.Set<T>().AddIfNotExists(item);
+            return DbContext.Set<T>().AddIfNotExists(item);
         }
 
-        public virtual void AddOrUpdate(T item)
+        public virtual T AddOrUpdate(T item)
         {
-            DbContext.Set<T>().AddOrUpdate(item);
+            item = DbContext.Set<T>().AddOrUpdate(item);
             DbContext.Entry<T>(item).State = EntityState.Modified;
-
+            return item;
         }
 
         public void Delete(Guid id)
@@ -87,6 +89,11 @@ namespace DataAccess.Repository
         public IEnumerable<T> Get(Expression<Func<T, bool>> predicate)
         {
             return DbContext.Set<T>().Get(predicate);
+        }
+
+        public async Task<T> GetFirst(Expression<Func<T, bool>> predicate)
+        {
+            return await DbContext.Set<T>().Get(predicate).FirstOrDefaultAsync();
         }
 
         public T Create()

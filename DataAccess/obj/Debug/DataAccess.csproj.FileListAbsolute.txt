@@ -38,3 +38,8 @@ D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.dll
 D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.pdb
 D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.Jobs.resources
 D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.subdomainEmpty.resources
+D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.subdomainCascade.resources
+D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.webpageRelationships.resources
+D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.configFiles.resources
+D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.nullDateTime.resources
+D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.fkFix.resources

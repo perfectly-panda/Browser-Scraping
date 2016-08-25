@@ -1,5 +1,6 @@
 namespace DataAccess
 {
+    using Configurations;
     using Core.Entities;
     using System;
     using System.Data.Entity;
@@ -17,8 +18,8 @@ namespace DataAccess
         public virtual DbSet<IgnoreList> IgnoreList { get; set; }
         public virtual DbSet<RelatedKeywords> RelatedKeywords { get; set; }
         public virtual DbSet<SubDomain> SubDomain { get; set; }
-        public virtual DbSet<WebPage> WebPage { get; set; }
-        public virtual DbSet<WebPageKeywords> WebPageKeywords { get; set; } 
+        public virtual DbSet<Webpage> Webpage { get; set; }
+        public virtual DbSet<WebpageKeywords> WebpageKeywords { get; set; } 
         public virtual DbSet<WebsiteKeywords> WebsiteKeywords { get; set; }
         public virtual DbSet<JobList> JobList { get; set; }
         public virtual DbSet<JobTracking> JobTracking { get; set; }
@@ -32,9 +33,10 @@ namespace DataAccess
                 .WithRequiredDependent()
                 .WillCascadeOnDelete(false);
 
-            modelBuilder.Entity<SubDomain>()
-                .HasRequired(s => s.Website)
-                .WithMany(w => w.SubDomains);
+            modelBuilder.Configurations.Add(new WebsiteConfiguration());
+            modelBuilder.Configurations.Add(new SubDomainConfiguration());
+            modelBuilder.Configurations.Add(new WebpageConfiguration());
+
         }
     }
 }

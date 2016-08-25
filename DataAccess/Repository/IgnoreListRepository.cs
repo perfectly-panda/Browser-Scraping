@@ -8,11 +8,11 @@ namespace DataAccess.Repository
 {
     public class IgnoreListRepository : GenericRepository<IgnoreList>, IIgnoreListRepository
     {
-        public IgnoreListRepository(IDbContext context) : base(context) { }
+        public IgnoreListRepository(DbContext context) : base(context) { }
 
-        public override void AddIfNew(IgnoreList item)
+        public override IgnoreList AddIfNew(IgnoreList item)
         {
-            DbContext.Set<IgnoreList>().AddIfNotExists(item, i => i.Value.Contains(item.Value));
+            return DbContext.Set<IgnoreList>().AddIfNotExists(item, i => i.Value.Contains(item.Value));
         }
     }
 }

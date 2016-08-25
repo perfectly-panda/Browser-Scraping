@@ -8,14 +8,15 @@ using System.Threading.Tasks;
 
 namespace Core.Entities
 {
-    public class WebPage: IEntity
+    public class Webpage: IEntity
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
 
-        [Required]
+        public Guid WebsiteId { get; set; }
         public Website Website { get; set; }
 
+        public Guid SubDomainId { get; set; }
         public SubDomain SubDomain { get; set; }
 
         [Required]
@@ -27,6 +28,6 @@ namespace Core.Entities
 
         public string Title { get; set; }
 
-        public DateTime LastAccessed { get; set; }
+        public DateTime? LastAccessed { get; set; }
     }
 }

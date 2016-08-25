@@ -8,8 +8,7 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repository
 {
-    public interface IWebPageKeywordRepository:IRepository<WebPageKeywords>
+    public interface IWebpageKeywordRepository:IRepository<WebpageKeywords>
     {
-        void AddOrUpdate(WebPageKeywords keyword);
     }
 }

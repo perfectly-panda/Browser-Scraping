@@ -15,7 +15,7 @@ namespace Browser
 {
     public partial class Form1 : Form
     {
-        private ParsedWebpage WebPage { get; set; }
+        private ParsedWebpage Webpage { get; set; }
 
         public EventLog EventLog { get; set; }
 
@@ -51,22 +51,22 @@ namespace Browser
             {
                 EventLog.AppendLog("Page Loaded");
 
-                ParsedWebpage webPage =  await Manager.ReceiveWebPage();
+                ParsedWebpage Webpage =  await Manager.ReceiveWebpage();
 
-                textBox2.Text = webPage.Url.ToString();
+                textBox2.Text = Webpage.Url.ToString();
 
                 EventLog.AppendLog("Processing Complete");
-                EventLog.AppendLog("Title: " + webPage.PageTitle);
-                EventLog.AppendLog("Domain: " + webPage.Domain);
-                EventLog.AppendLog("URL: " + webPage.Url);
-                EventLog.AppendLog("Links: " + webPage.Links.Count());
-                EventLog.AppendLog("Word Count: " + webPage.WordCount.ToString());
+                EventLog.AppendLog("Title: " + Webpage.PageTitle);
+                EventLog.AppendLog("Domain: " + Webpage.Domain);
+                EventLog.AppendLog("URL: " + Webpage.Url);
+                EventLog.AppendLog("Links: " + Webpage.Links.Count());
+                EventLog.AppendLog("Word Count: " + Webpage.WordCount.ToString());
 
-                string blogLink = webPage.BlogLink == null ? "No" : "Yes";
+                string blogLink = Webpage.BlogLink == null ? "No" : "Yes";
                 EventLog.AppendLog("Blog Link: " + blogLink);
-                if(webPage.BlogLink != null)
+                if(Webpage.BlogLink != null)
                 {
-                    EventLog.AppendLog(webPage.BlogLink);
+                    EventLog.AppendLog(Webpage.BlogLink);
                 }
 
                 if (Manager.Complete)

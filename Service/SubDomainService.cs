@@ -17,7 +17,7 @@ namespace Service
             {
                 var tScope = scope.Resolve<ISubDomainRepository>();
 
-                tScope.AddIfNew(item);
+                item = tScope.AddIfNew(item);
 
                 await tScope.Save();
 

@@ -55,6 +55,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Configurations\DefaultEntityConfiguration.cs" />
+    <Compile Include="Configurations\SubDomainConfiguration.cs" />
+    <Compile Include="Configurations\WebpageConfiguration.cs" />
+    <Compile Include="Configurations\WebsiteConfiguration.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="IDbContext.cs" />
     <Compile Include="Migrations\201608160134065_ReInitializeDB.cs" />
@@ -72,6 +76,26 @@
     <Compile Include="Migrations\201608240122463_subdomainEmpty.cs" />
     <Compile Include="Migrations\201608240122463_subdomainEmpty.Designer.cs">
       <DependentUpon>201608240122463_subdomainEmpty.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608251846149_subdomainCascade.cs" />
+    <Compile Include="Migrations\201608251846149_subdomainCascade.Designer.cs">
+      <DependentUpon>201608251846149_subdomainCascade.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608251852235_webpageRelationships.cs" />
+    <Compile Include="Migrations\201608251852235_webpageRelationships.Designer.cs">
+      <DependentUpon>201608251852235_webpageRelationships.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608251924074_configFiles.cs" />
+    <Compile Include="Migrations\201608251924074_configFiles.Designer.cs">
+      <DependentUpon>201608251924074_configFiles.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608252107399_nullDateTime.cs" />
+    <Compile Include="Migrations\201608252107399_nullDateTime.Designer.cs">
+      <DependentUpon>201608252107399_nullDateTime.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608252111044_fkFix.cs" />
+    <Compile Include="Migrations\201608252111044_fkFix.Designer.cs">
+      <DependentUpon>201608252111044_fkFix.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
@@ -110,6 +134,21 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201608240122463_subdomainEmpty.resx">
       <DependentUpon>201608240122463_subdomainEmpty.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608251846149_subdomainCascade.resx">
+      <DependentUpon>201608251846149_subdomainCascade.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608251852235_webpageRelationships.resx">
+      <DependentUpon>201608251852235_webpageRelationships.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608251924074_configFiles.resx">
+      <DependentUpon>201608251924074_configFiles.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608252107399_nullDateTime.resx">
+      <DependentUpon>201608252107399_nullDateTime.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608252111044_fkFix.resx">
+      <DependentUpon>201608252111044_fkFix.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

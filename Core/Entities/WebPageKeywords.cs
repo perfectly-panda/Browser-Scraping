@@ -8,13 +8,13 @@ using System.Threading.Tasks;
 
 namespace Core.Entities
 {
-    public class WebPageKeywords: IEntity
+    public class WebpageKeywords: IEntity
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
 
         [Required]
-        public WebPage WebPage { get; set; }
+        public Webpage Webpage { get; set; }
 
         [Required]
         public Keyword Keyword { get; set; }

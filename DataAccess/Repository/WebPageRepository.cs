@@ -5,23 +5,55 @@ using System.Data.Entity;
 
 namespace DataAccess.Repository
 {
-    public class WebpageRepository : GenericRepository<WebPage>, IWebPageRepository
+    public class WebpageRepository : GenericRepository<Webpage>, IWebpageRepository
     {
-        public WebpageRepository(IDbContext context) : base(context) { }
+        public WebpageRepository(DbContext context) : base(context) { }
 
 
-        public override void AddIfNew(WebPage item)
+        public override Webpage AddIfNew(Webpage item)
         {
-            DbContext.Set<WebPage>().AddIfNotExists(item, i => i.Url.Contains(item.Url));
+            item = DbContext.Set<Webpage>().AddIfNotExists(item, i => i.Url.Contains(item.Url) && i.SubDomain.Id == item.SubDomain.Id && i.Website.Id == item.Website.Id);
+
+            if (item.Id == null || item.Id == Guid.Empty)
+            {
+                if (item.Website.Id != null && item.Website.Id != Guid.Empty)
+                {
+                    DbContext.Entry<Website>(item.Website).State = System.Data.Entity.EntityState.Unchanged;
+                }
+                if (item.SubDomain.Id != null && item.SubDomain.Id != Guid.Empty)
+                {
+                    DbContext.Entry<SubDomain>(item.SubDomain).State = EntityState.Unchanged;
+                }
+            }
+
+            return item;
         }
 
-        public override void AddOrUpdate(WebPage item)
+        public override Webpage AddOrUpdate(Webpage item)
         {
-            DbContext.Set<WebPage>().AddOrUpdate(item, i => i.Url.Contains(item.Url));
-            DbContext.Entry<WebPage>(item).State = EntityState.Modified;
+            item = DbContext.Set<Webpage>().AddOrUpdate(item, i => i.Url.Contains(item.Url) && i.SubDomain.Id == item.SubDomain.Id && i.Website.Id == item.Website.Id);
+
+            if (item.Id != null && item.Id != Guid.Empty)
+            {
+                DbContext.Entry<Webpage>(item).State = EntityState.Modified;
+            }
+
+            if (item.Id == null || item.Id == Guid.Empty)
+            {
+                if (item.Website.Id != null && item.Website.Id != Guid.Empty)
+                {
+                    DbContext.Entry<Website>(item.Website).State = System.Data.Entity.EntityState.Unchanged;
+                }
+                if (item.SubDomain.Id != null && item.SubDomain.Id != Guid.Empty)
+                {
+                    DbContext.Entry<SubDomain>(item.SubDomain).State = EntityState.Unchanged;
+                }
+            }
+
+            return item;
         }
 
-        public Task<WebPage> FindByUrl(string url)
+        public Task<Webpage> FindByUrl(string url)
         {
             throw new NotImplementedException();
         }

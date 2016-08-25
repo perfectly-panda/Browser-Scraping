@@ -18,6 +18,7 @@ namespace Parser
 
         private Website Website { get; set; }
         private SubDomain SubDomain { get; set; }
+        private Webpage Webpage { get; set; }
 
         WebsiteService _websiteService;
         private WebsiteService WebsiteService
@@ -40,37 +41,85 @@ namespace Parser
             }
         }
 
+        WebpageService _WebpageService;
+        private WebpageService WebpageService
+        {
+            get
+            {
+                if (_WebpageService == null)
+                { _WebpageService = new WebpageService(); }
+                return _WebpageService;
+            }
+        }
+
         public async void ParseWebpage(System.Windows.Forms.WebBrowser webBrowser)
         {
             this.ParsedWebpage = new ParsedWebpage(webBrowser);
 
-            this.Website = await SaveWebsite();
-            await SaveSubDomain();
+            SaveWebsite();
+            SaveSubDomain();
+
+            SaveWebpage();
+
         }
 
-        private async Task<Website> SaveWebsite()
+        private async Task SaveWebsite()
         {
             var website = new Website();
 
             website.Domain = this.CleanDomain;
 
-            return await WebsiteService.Add(website);
+            this.Website = await WebsiteService.Add(website);
         }
 
-        private async Task<SubDomain> SaveSubDomain()
+        private async Task SaveSubDomain()
         {
-                var subDomain = new SubDomain();
+            var subDomain = new SubDomain();
 
-                subDomain.Domain = this.ParsedWebpage.SubDomain;
+            subDomain.Domain = this.ParsedWebpage.SubDomain;
 
-                if (this.Website.Id == null || this.Website.Id == Guid.Empty)
-                {
-                    this.Website = await WebsiteService.FindByUrl(this.CleanDomain);
-                }
+            subDomain.WebsiteId = Website.Id;
+            subDomain.Website = this.Website;
 
-                subDomain.Website = this.Website;
+            this.SubDomain = await SubDomainService.Add(subDomain);
+        }
 
-                return await SubDomainService.Add(subDomain);
+        private async Task SaveWebpage()
+        {
+            var webpage = new Webpage();
+
+            webpage.Url = this.ParsedWebpage.Url.AbsolutePath.ToString();
+            webpage.Title = this.ParsedWebpage.PageTitle;
+
+            webpage.FullHtml = this.ParsedWebpage.OriginalDocument.ToString();
+            webpage.BodyHtml = this.ParsedWebpage.InjectedDocument.ToString();
+
+
+            webpage.LastAccessed = DateTime.Today.Date;
+
+            webpage.WebsiteId = Website.Id;
+            webpage.Website = this.Website;
+
+            webpage.SubDomainId = this.SubDomain.Id;
+            webpage.SubDomain = this.SubDomain;
+
+            this.Webpage = await WebpageService.Add(webpage);
+        }
+
+        private async Task CheckWebsite()
+        {
+            if (this.Website == null || this.Website.Id == null || this.Website.Id == Guid.Empty)
+            {
+                this.Website = await WebsiteService.FindByUrl(this.CleanDomain);
+            }
+        }
+
+        private async Task CheckSubDomain()
+        {
+            if (this.SubDomain == null || this.SubDomain.Id == null || this.SubDomain.Id == Guid.Empty)
+            {
+                this.SubDomain = await SubDomainService.GetFirst(s=>s.Website.Id == this.Website.Id && s.Domain == this.SubDomain.Domain);
+            }
         }
 
         private string CleanDomain

@@ -5,6 +5,7 @@ using DataAccess.Repository;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -25,7 +26,7 @@ namespace Service
             {
                 var tScope = scope.Resolve<U>();
 
-                tScope.AddIfNew(item);
+                item = tScope.AddIfNew(item);
 
                 await tScope.Save();
 
@@ -55,6 +56,26 @@ namespace Service
         public async virtual Task<T> Update(T item)
         {
             throw new NotImplementedException();
+        }
+
+        public virtual IEnumerable<T> Get(Expression<Func<T, bool>> predicate)
+        {
+            using (var scope = Container.BeginLifetimeScope())
+            {
+                var tScope = scope.Resolve<U>();
+
+                return tScope.Get(predicate);
+            }
+        }
+
+        public virtual async Task<T> GetFirst(Expression<Func<T, bool>> predicate)
+        {
+            using (var scope = Container.BeginLifetimeScope())
+            {
+                var tScope = scope.Resolve<U>();
+
+                return await tScope.GetFirst(predicate);
+            }
         }
     }
 }

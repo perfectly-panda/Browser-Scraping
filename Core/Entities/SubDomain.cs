@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 
@@ -11,7 +12,9 @@ namespace Core.Entities
 
         public string Domain { get; set; }
 
-        [Required]
+        public Guid WebsiteId { get; set; }
         public Website Website { get; set; }
+
+        public virtual List<Webpage> Webpages { get; set; }
     }
 }

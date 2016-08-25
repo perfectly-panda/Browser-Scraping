@@ -10,12 +10,13 @@ namespace Core.Entities
 {
     public class Website : IEntity
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
 
         [Required]
         public String Domain { get; set; }
 
-        public List<SubDomain> SubDomains {get; set; }
+        public virtual List<SubDomain> SubDomains {get; set; }
+
+        public virtual List<Webpage> Webpages { get; set; }
     }
 }

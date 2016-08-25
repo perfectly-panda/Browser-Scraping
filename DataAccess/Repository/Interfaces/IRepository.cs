@@ -13,11 +13,13 @@ namespace DataAccess.Repository
 
         IEnumerable<T> Get(Expression<Func<T, bool>> predicate);
 
+        Task<T> GetFirst(Expression<Func<T, bool>> predicate);
+
         void Add(T item);
 
-        void AddIfNew(T item);
+        T AddIfNew(T item);
 
-        void AddOrUpdate(T item);
+        T AddOrUpdate(T item);
 
         void Update(T item);
 

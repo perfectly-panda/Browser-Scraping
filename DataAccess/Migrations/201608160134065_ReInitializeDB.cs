@@ -61,7 +61,7 @@ namespace DataAccess.Migrations
                 .PrimaryKey(t => t.Id);
             
             CreateTable(
-                "dbo.WebPages",
+                "dbo.Webpages",
                 c => new
                     {
                         Id = c.Guid(nullable: false, identity: true),
@@ -80,19 +80,19 @@ namespace DataAccess.Migrations
                 .Index(t => t.Website_Id);
             
             CreateTable(
-                "dbo.WebPageKeywords",
+                "dbo.WebpageKeywords",
                 c => new
                     {
                         Id = c.Guid(nullable: false, identity: true),
                         Count = c.Int(nullable: false),
                         Keyword_Id = c.Guid(nullable: false),
-                        WebPage_Id = c.Guid(nullable: false),
+                        Webpage_Id = c.Guid(nullable: false),
                     })
                 .PrimaryKey(t => t.Id)
                 .ForeignKey("dbo.Keywords", t => t.Keyword_Id, cascadeDelete: true)
-                .ForeignKey("dbo.WebPages", t => t.WebPage_Id, cascadeDelete: true)
+                .ForeignKey("dbo.Webpages", t => t.Webpage_Id, cascadeDelete: true)
                 .Index(t => t.Keyword_Id)
-                .Index(t => t.WebPage_Id);
+                .Index(t => t.Webpage_Id);
             
             CreateTable(
                 "dbo.WebsiteKeywords",
@@ -115,25 +115,25 @@ namespace DataAccess.Migrations
         {
             DropForeignKey("dbo.WebsiteKeywords", "WebSite_Id", "dbo.Websites");
             DropForeignKey("dbo.WebsiteKeywords", "Keyword_Id", "dbo.Keywords");
-            DropForeignKey("dbo.WebPageKeywords", "WebPage_Id", "dbo.WebPages");
-            DropForeignKey("dbo.WebPageKeywords", "Keyword_Id", "dbo.Keywords");
-            DropForeignKey("dbo.WebPages", "Website_Id", "dbo.Websites");
-            DropForeignKey("dbo.WebPages", "SubDomain_Id", "dbo.SubDomains");
+            DropForeignKey("dbo.WebpageKeywords", "Webpage_Id", "dbo.Webpages");
+            DropForeignKey("dbo.WebpageKeywords", "Keyword_Id", "dbo.Keywords");
+            DropForeignKey("dbo.Webpages", "Website_Id", "dbo.Websites");
+            DropForeignKey("dbo.Webpages", "SubDomain_Id", "dbo.SubDomains");
             DropForeignKey("dbo.SubDomains", "Website_Id", "dbo.Websites");
             DropForeignKey("dbo.RelatedKeywords", "SecondaryKeyword_Id", "dbo.Keywords");
             DropForeignKey("dbo.RelatedKeywords", "Id", "dbo.Keywords");
             DropIndex("dbo.WebsiteKeywords", new[] { "WebSite_Id" });
             DropIndex("dbo.WebsiteKeywords", new[] { "Keyword_Id" });
-            DropIndex("dbo.WebPageKeywords", new[] { "WebPage_Id" });
-            DropIndex("dbo.WebPageKeywords", new[] { "Keyword_Id" });
-            DropIndex("dbo.WebPages", new[] { "Website_Id" });
-            DropIndex("dbo.WebPages", new[] { "SubDomain_Id" });
+            DropIndex("dbo.WebpageKeywords", new[] { "Webpage_Id" });
+            DropIndex("dbo.WebpageKeywords", new[] { "Keyword_Id" });
+            DropIndex("dbo.Webpages", new[] { "Website_Id" });
+            DropIndex("dbo.Webpages", new[] { "SubDomain_Id" });
             DropIndex("dbo.SubDomains", new[] { "Website_Id" });
             DropIndex("dbo.RelatedKeywords", new[] { "SecondaryKeyword_Id" });
             DropIndex("dbo.RelatedKeywords", new[] { "Id" });
             DropTable("dbo.WebsiteKeywords");
-            DropTable("dbo.WebPageKeywords");
-            DropTable("dbo.WebPages");
+            DropTable("dbo.WebpageKeywords");
+            DropTable("dbo.Webpages");
             DropTable("dbo.Websites");
             DropTable("dbo.SubDomains");
             DropTable("dbo.RelatedKeywords");

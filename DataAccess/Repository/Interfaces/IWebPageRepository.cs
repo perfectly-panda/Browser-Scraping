@@ -7,8 +7,8 @@ using System.Threading.Tasks;
 
 namespace DataAccess.Repository
 {
-    public interface IWebPageRepository: IRepository<WebPage>
+    public interface IWebpageRepository: IRepository<Webpage>
     {
-        Task<WebPage> FindByUrl(string url);
+        Task<Webpage> FindByUrl(string url);
     }
 }

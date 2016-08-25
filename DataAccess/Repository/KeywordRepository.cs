@@ -10,15 +10,13 @@ namespace DataAccess.Repository
 {
     public class KeywordRepository : GenericRepository<Keyword>, IKeywordRepository
     {
-        private readonly IDbContext context;
 
-        public KeywordRepository(IDbContext context) : base(context) {
-            this.context = context;
+        public KeywordRepository(DbContext context) : base(context) {
         }
 
-        public override void AddIfNew(Keyword item)
+        public override Keyword AddIfNew(Keyword item)
         {
-            DbContext.Set<Keyword>().AddIfNotExists(item, i => i.Value.Contains(item.Value));
+            return DbContext.Set<Keyword>().AddIfNotExists(item, i => i.Value.Contains(item.Value));
         }
 
         public async Task<Keyword> GetKeywordByValue(string value)

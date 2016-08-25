@@ -8,17 +8,14 @@ using System.Linq;
 
 namespace DataAccess.Repository
 {
-    public class WebPageKeywordRepository : GenericRepository<WebPageKeywords>, IWebPageKeywordRepository
+    public class WebpageKeywordRepository : GenericRepository<WebpageKeywords>, IWebpageKeywordRepository
     {
-        private readonly IDbContext context;
-
-        public WebPageKeywordRepository(IDbContext context) : base(context) {
-            this.context = context;
+        public WebpageKeywordRepository(DbContext context) : base(context) {
         }
 
-        public override void AddIfNew(WebPageKeywords item)
+        public override WebpageKeywords AddIfNew(WebpageKeywords item)
         {
-            DbContext.Set<WebPageKeywords>().AddIfNotExists(item, i => i.Keyword == item.Keyword && i.WebPage == item.WebPage);
+            return DbContext.Set<WebpageKeywords>().AddIfNotExists(item, i => i.Keyword == item.Keyword && i.Webpage == item.Webpage);
         }
     }
 }

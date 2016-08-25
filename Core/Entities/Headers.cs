@@ -14,7 +14,7 @@ namespace Core.Entities
         public Guid Id { get; set; }
         
         [Required]
-        public WebPage Webpage { get; set; }
+        public Webpage Webpage { get; set; }
 
         [Required]
         public int HeaderType { get; set; }

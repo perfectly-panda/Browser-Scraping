@@ -11,20 +11,20 @@ namespace Core.Functions
 {
      public static class PageTyping
     {
-        public static PageType FindPageType(ParsedWebpage webPage)
+        public static PageType FindPageType(ParsedWebpage Webpage)
         {
-            if (CheckForHomePage(webPage)) return PageType.HomePage;
-            if (CheckForBlogHomePage(webPage)) return PageType.BlogHomePage;
-            if (CheckForBlogPage(webPage)) return PageType.BlogPage;
+            if (CheckForHomePage(Webpage)) return PageType.HomePage;
+            if (CheckForBlogHomePage(Webpage)) return PageType.BlogHomePage;
+            if (CheckForBlogPage(Webpage)) return PageType.BlogPage;
 
             return PageType.Page;
         }
 
-        private static bool CheckForHomePage(ParsedWebpage webPage)
+        private static bool CheckForHomePage(ParsedWebpage Webpage)
         {
-            var path = webPage.Url.AbsolutePath;
+            var path = Webpage.Url.AbsolutePath;
 
-            if (webPage.SubDomain != "" && webPage.SubDomain != "www") return false;
+            if (Webpage.SubDomain != "" && Webpage.SubDomain != "www") return false;
 
             if (path == "/") return true;
             if (path.StartsWith("/index")) return true;
@@ -33,26 +33,26 @@ namespace Core.Functions
             return false;
         }
 
-        private static bool CheckForBlogHomePage(ParsedWebpage webPage)
+        private static bool CheckForBlogHomePage(ParsedWebpage Webpage)
         {
-            var path = webPage.Url.AbsolutePath;
+            var path = Webpage.Url.AbsolutePath;
 
             if (path == "/blog") return true;
 
-            if (webPage.SubDomain == "blog" && path == "/") return true;
+            if (Webpage.SubDomain == "blog" && path == "/") return true;
 
-            if (webPage.Url.Segments.Last().Contains("blog") && webPage.Url.Segments.Last().Length <= 20) return true;
+            if (Webpage.Url.Segments.Last().Contains("blog") && Webpage.Url.Segments.Last().Length <= 20) return true;
 
             return false;
         }
 
-        private static bool CheckForBlogPage(ParsedWebpage webPage)
+        private static bool CheckForBlogPage(ParsedWebpage Webpage)
         {
-            var path = webPage.Url.AbsolutePath;
+            var path = Webpage.Url.AbsolutePath;
 
             if (path != "/blog" && path.StartsWith("/blog")) return true;
-            if (webPage.Url.Segments.Last().Contains("blog") && webPage.Url.Segments.Last().Length > 20) return true;
-            if (webPage.SubDomain == "blog" && path != "/") return true;
+            if (Webpage.Url.Segments.Last().Contains("blog") && Webpage.Url.Segments.Last().Length > 20) return true;
+            if (Webpage.SubDomain == "blog" && path != "/") return true;
 
             return false;
         }
