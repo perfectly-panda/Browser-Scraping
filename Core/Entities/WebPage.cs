@@ -29,5 +29,9 @@ namespace Core.Entities
         public string Title { get; set; }
 
         public DateTime? LastAccessed { get; set; }
+
+        public List<WordCount> WordCount { get; set; }
+
+        public List<Links> Links { get; set; }
     }
 }

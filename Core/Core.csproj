@@ -63,6 +63,7 @@
     <Compile Include="Entities\WebPageKeywords.cs" />
     <Compile Include="Entities\Website.cs" />
     <Compile Include="Entities\WebsiteKeywords.cs" />
+    <Compile Include="Entities\WordCount.cs" />
     <Compile Include="Functions\Navigation.cs" />
     <Compile Include="Functions\PageTyping.cs" />
     <Compile Include="Functions\TextList.cs" />

@@ -8,10 +8,12 @@ using System.Threading.Tasks;
 
 namespace Core.Entities
 {
-    class Links : IEntity
+    public class Links : IEntity
     {
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
+
+        public Guid WebpageId { get; set; }
 
         [Required]
         public Webpage Webpage { get; set; }

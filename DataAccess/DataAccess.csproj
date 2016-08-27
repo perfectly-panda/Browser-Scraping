@@ -56,6 +56,8 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Configurations\DefaultEntityConfiguration.cs" />
+    <Compile Include="Configurations\LinksConfiguration.cs" />
+    <Compile Include="Configurations\WordCountConfiguration.cs" />
     <Compile Include="Configurations\SubDomainConfiguration.cs" />
     <Compile Include="Configurations\WebpageConfiguration.cs" />
     <Compile Include="Configurations\WebsiteConfiguration.cs" />
@@ -97,6 +99,14 @@
     <Compile Include="Migrations\201608252111044_fkFix.Designer.cs">
       <DependentUpon>201608252111044_fkFix.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201608271043123_wordCount.cs" />
+    <Compile Include="Migrations\201608271043123_wordCount.Designer.cs">
+      <DependentUpon>201608271043123_wordCount.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201608271051029_links.cs" />
+    <Compile Include="Migrations\201608271051029_links.Designer.cs">
+      <DependentUpon>201608271051029_links.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
     <Compile Include="Repository\IgnoreListRepository.cs" />
@@ -105,6 +115,8 @@
     <Compile Include="Repository\Interfaces\IKeywordRepository.cs" />
     <Compile Include="Repository\Interfaces\IRepository.cs" />
     <Compile Include="Repository\Interfaces\ISubDomainRepository.cs" />
+    <Compile Include="Repository\Interfaces\ILinksRepository.cs" />
+    <Compile Include="Repository\Interfaces\IWordCountRepository.cs" />
     <Compile Include="Repository\Interfaces\IWebsiteRepository.cs" />
     <Compile Include="Repository\Interfaces\IWebPageRepository.cs" />
     <Compile Include="Repository\WebpageKeywordRepository .cs" />
@@ -149,6 +161,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201608252111044_fkFix.resx">
       <DependentUpon>201608252111044_fkFix.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608271043123_wordCount.resx">
+      <DependentUpon>201608271043123_wordCount.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201608271051029_links.resx">
+      <DependentUpon>201608271051029_links.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>

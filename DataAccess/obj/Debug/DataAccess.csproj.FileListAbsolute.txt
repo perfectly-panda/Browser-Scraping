@@ -43,3 +43,5 @@ D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.webpageRelationsh
 D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.configFiles.resources
 D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.nullDateTime.resources
 D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.fkFix.resources
+D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.wordCount.resources
+D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.links.resources
