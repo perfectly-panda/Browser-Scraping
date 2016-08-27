@@ -20,6 +20,7 @@ namespace DataAccess
         public virtual DbSet<SubDomain> SubDomain { get; set; }
         public virtual DbSet<Webpage> Webpage { get; set; }
         public virtual DbSet<WordCount> WordCount { get; set; }
+        public virtual DbSet<Links> Links { get; set; }
         public virtual DbSet<WebpageKeywords> WebpageKeywords { get; set; } 
         public virtual DbSet<WebsiteKeywords> WebsiteKeywords { get; set; }
         public virtual DbSet<JobList> JobList { get; set; }
