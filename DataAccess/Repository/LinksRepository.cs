@@ -16,7 +16,17 @@ namespace DataAccess.Repository
 
         public override Links AddIfNew(Links item)
         {
-            return DbContext.Set<Links>().AddIfNotExists(item, i => i.URL.Contains(item.URL) && i.WebpageId == item.WebpageId);
+            item =  DbContext.Set<Links>().AddIfNotExists(item, i => i.URL.Contains(item.URL) && i.WebpageId == item.WebpageId);
+
+            if (item.Id == null || item.Id == Guid.Empty)
+            {
+                if (item.Webpage.Id != null && item.Webpage.Id != Guid.Empty)
+                {
+                    DbContext.Entry<Webpage>(item.Webpage).State = System.Data.Entity.EntityState.Unchanged;
+                }
+            }
+
+            return item;
         }
     }
 }

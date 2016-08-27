@@ -10,7 +10,16 @@ namespace Core.Entities
 {
     public class Links : IEntity
     {
-        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        public Links() { }
+
+        public Links(string url, string linkText, Webpage webpage) {
+            this.URL = url;
+            this.LinkText = linkText;
+            this.WebpageId = webpage.Id;
+            this.Webpage = webpage;
+        }
+
+
         public Guid Id { get; set; }
 
         public Guid WebpageId { get; set; }

@@ -52,6 +52,28 @@ namespace Parser
             }
         }
 
+        LinkService _LinkService;
+        private LinkService LinkService
+        {
+            get
+            {
+                if (_LinkService == null)
+                { _LinkService = new LinkService(); }
+                return _LinkService;
+            }
+        }
+
+        WordCountService _WordCountService;
+        private WordCountService WordCountService
+        {
+            get
+            {
+                if (_WordCountService == null)
+                { _WordCountService = new WordCountService(); }
+                return _WordCountService;
+            }
+        }
+
         public async void ParseWebpage(System.Windows.Forms.WebBrowser webBrowser)
         {
             this.ParsedWebpage = new ParsedWebpage(webBrowser);
@@ -89,7 +111,7 @@ namespace Parser
             var webpage = new Webpage();
 
             webpage.Url = this.ParsedWebpage.Url.AbsolutePath.ToString();
-             webpage.Title = this.ParsedWebpage.PageTitle;
+            webpage.Title = this.ParsedWebpage.PageTitle;
 
             webpage.FullHtml = this.ParsedWebpage.OriginalDocument.DocumentNode.InnerHtml.ToString();
             webpage.BodyHtml = this.ParsedWebpage.InjectedDocument.DocumentNode.InnerHtml.ToString();
@@ -119,6 +141,14 @@ namespace Parser
             if (this.SubDomain == null || this.SubDomain.Id == null || this.SubDomain.Id == Guid.Empty)
             {
                 this.SubDomain = await SubDomainService.GetFirst(s=>s.Website.Id == this.Website.Id && s.Domain == this.SubDomain.Domain);
+            }
+        }
+
+        private async Task CheckWebpage()
+        {
+            if (this.Webpage == null || this.Webpage.Id == null || this.Webpage.Id == Guid.Empty)
+            {
+                this.Webpage = await WebpageService.GetFirst(s => s.Website.Id == this.Website.Id && s.SubDomain.Id == this.SubDomain.Id && s.Url == this.Webpage.Url);
             }
         }
 

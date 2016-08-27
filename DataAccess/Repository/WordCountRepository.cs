@@ -16,7 +16,17 @@ namespace DataAccess.Repository
 
         public override WordCount AddIfNew(WordCount item)
         {
-            return DbContext.Set<WordCount>().AddIfNotExists(item, i => i.Value.Contains(item.Value) && i.WebpageId == item.WebpageId);
+            item = DbContext.Set<WordCount>().AddIfNotExists(item, i => i.Value.Contains(item.Value) && i.WebpageId == item.WebpageId);
+
+            if (item.Id == null || item.Id == Guid.Empty)
+            {
+                if (item.Webpage.Id != null && item.Webpage.Id != Guid.Empty)
+                {
+                    DbContext.Entry<Webpage>(item.Webpage).State = System.Data.Entity.EntityState.Unchanged;
+                }
+            }
+
+            return item;
         }
 
         public override WordCount AddOrUpdate(WordCount item)
