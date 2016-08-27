@@ -26,6 +26,8 @@ namespace DataAccess
                 builder.RegisterType<WebpageRepository>().As<IWebpageRepository>();
                 builder.RegisterType<SubDomainRepository>().As<ISubDomainRepository>();
                 builder.RegisterType<KeywordRepository>().As<IKeywordRepository>();
+                builder.RegisterType<LinksRepository>().As<ILinksRepository>();
+                builder.RegisterType<WordCountRepository>().As<IWordCountRepository>();
                 Container = builder.Build();
             }
 

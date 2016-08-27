@@ -77,5 +77,20 @@ namespace Service
                 return await tScope.GetFirst(predicate);
             }
         }
+
+        public async Task AddList(List<T> items)
+        {
+            using (var scope = Container.BeginLifetimeScope())
+            {
+                var tScope = scope.Resolve<U>();
+
+                foreach (var item in items)
+                {
+                    tScope.AddIfNew(item);
+                }
+
+                await tScope.Save();
+            }
+        }
     }
 }
