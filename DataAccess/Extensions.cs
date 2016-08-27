@@ -22,13 +22,15 @@ namespace DataAccess
         {
             var exists = predicate != null ? dbSet.Any(predicate) : dbSet.Any();
 
+            T item = new T();
+
             if(exists)
             {
-                var item = dbSet.Where(predicate).FirstOrDefault();
+                item = dbSet.Where(predicate).AsNoTracking().FirstOrDefault();
                 entity.Id = item.Id;
             }
 
-            return !exists ? dbSet.Add(entity) :  dbSet.Attach(entity);
+            return !exists ? dbSet.Add(entity) : dbSet.Attach(entity);
         }
 
         public static IQueryable<T> Get<T>(this DbSet<T> dbSet, Expression<Func<T, bool>> predicate = null) where T : class, new()

@@ -89,10 +89,10 @@ namespace Parser
             var webpage = new Webpage();
 
             webpage.Url = this.ParsedWebpage.Url.AbsolutePath.ToString();
-            webpage.Title = this.ParsedWebpage.PageTitle;
+             webpage.Title = this.ParsedWebpage.PageTitle;
 
-            webpage.FullHtml = this.ParsedWebpage.OriginalDocument.ToString();
-            webpage.BodyHtml = this.ParsedWebpage.InjectedDocument.ToString();
+            webpage.FullHtml = this.ParsedWebpage.OriginalDocument.DocumentNode.InnerHtml.ToString();
+            webpage.BodyHtml = this.ParsedWebpage.InjectedDocument.DocumentNode.InnerHtml.ToString();
 
 
             webpage.LastAccessed = DateTime.Today.Date;
