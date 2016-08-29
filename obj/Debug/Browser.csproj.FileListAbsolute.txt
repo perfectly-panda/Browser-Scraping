@@ -76,3 +76,11 @@ D:\Browser-Scraping\bin\Debug\EntityFramework.xml
 D:\Browser-Scraping\bin\Debug\EntityFramework.SqlServer.xml
 D:\Browser-Scraping\bin\Debug\DataMaintenance.dll
 D:\Browser-Scraping\bin\Debug\DataMaintenance.pdb
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\Core.dll
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\DataMaintenance.dll
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\Service.dll
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\Autofac.dll
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\Core.pdb
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\DataMaintenance.pdb
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\Service.pdb
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\bin\Debug\Autofac.xml

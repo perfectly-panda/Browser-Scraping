@@ -44,11 +44,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="D:\Browser-Scraping\Core\Core.csproj">
+    <ProjectReference Include="..\Core\Core.csproj">
       <Project>{46a2ec54-0f04-4d2f-b52b-3d66a17089f1}</Project>
       <Name>Core</Name>
     </ProjectReference>
-    <ProjectReference Include="D:\Browser-Scraping\DataAccess\DataAccess.csproj">
+    <ProjectReference Include="..\DataAccess\DataAccess.csproj">
       <Project>{b8182d4c-fe42-4bcc-ae85-fbfaace0c9b2}</Project>
       <Name>DataAccess</Name>
     </ProjectReference>

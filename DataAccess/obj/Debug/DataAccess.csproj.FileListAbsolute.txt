@@ -7,14 +7,7 @@ C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAcces
 C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\bin\Debug\EntityFramework.SqlServer.xml
 C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\obj\Debug\DataAccess.dll
 C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\obj\Debug\DataAccess.pdb
-C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.addModels.resources
 C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\obj\Debug\DataAccess.csproj.GenerateResource.Cache
-C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.addTimeStamp.resources
-C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.websitechanges.resources
-C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.subdomainchanges.resources
-C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.subdomainFK.resources
-C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.keywordsInitial.resources
-C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.webpagedata.resources
 C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\bin\Debug\HtmlAgilityPack.dll
 C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\bin\Debug\HtmlAgilityPack.pdb
 C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\bin\Debug\HtmlAgilityPack.xml
@@ -45,3 +38,17 @@ D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.nullDateTime.reso
 D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.fkFix.resources
 D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.wordCount.resources
 D:\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.links.resources
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\bin\Debug\Core.dll
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\bin\Debug\Core.pdb
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\obj\Debug\DataAccess.csprojResolveAssemblyReference.cache
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.ReInitializeDB.resources
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.update.resources
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.Jobs.resources
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.subdomainEmpty.resources
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.subdomainCascade.resources
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.WebpageRelationships.resources
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.configFiles.resources
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.nullDateTime.resources
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.fkFix.resources
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.wordCount.resources
+C:\Users\Samara\Documents\Visual Studio 2015\Projects\Browser-Scraping\DataAccess\obj\Debug\DataAccess.Migrations.links.resources

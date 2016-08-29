@@ -119,11 +119,13 @@
     <Compile Include="Repository\Interfaces\IWordCountRepository.cs" />
     <Compile Include="Repository\Interfaces\IWebsiteRepository.cs" />
     <Compile Include="Repository\Interfaces\IWebPageRepository.cs" />
+    <Compile Include="Repository\LinksRepository.cs" />
     <Compile Include="Repository\WebpageKeywordRepository .cs" />
     <Compile Include="Repository\KeywordRepository.cs" />
     <Compile Include="Repository\SubDomainRepository .cs" />
     <Compile Include="Repository\WebpageRepository.cs" />
     <Compile Include="Repository\WebsiteRepository.cs" />
+    <Compile Include="Repository\WordCountRepository.cs" />
     <Compile Include="WebsiteData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
