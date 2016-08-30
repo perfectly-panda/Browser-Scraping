@@ -86,6 +86,7 @@
     <Compile Include="Repository\SubDomainRepository .cs" />
     <Compile Include="Repository\WebpageRepository.cs" />
     <Compile Include="Repository\WebsiteRepository.cs" />
+    <Compile Include="Repository\WordCountRepository.cs" />
     <Compile Include="WebsiteData.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
