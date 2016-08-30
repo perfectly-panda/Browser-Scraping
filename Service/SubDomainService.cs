@@ -19,7 +19,7 @@ namespace Service
 
                 item = tScope.AddIfNew(item);
 
-                await tScope.Save();
+                tScope.Save();
 
                 return item;
             }
@@ -53,7 +53,7 @@ namespace Service
                 var tScope = scope.Resolve<ISubDomainRepository>();
                 tScope.AddIfNew(item);
 
-                await tScope.Save();
+                tScope.Save();
 
                 return item;
             }

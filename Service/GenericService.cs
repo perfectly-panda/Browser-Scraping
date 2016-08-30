@@ -28,7 +28,7 @@ namespace Service
 
                 item = tScope.AddIfNew(item);
 
-                await tScope.Save();
+                 tScope.Save();
 
                 return item;
             }
@@ -68,13 +68,13 @@ namespace Service
             }
         }
 
-        public virtual async Task<T> GetFirst(Expression<Func<T, bool>> predicate)
+        public virtual T GetFirst(Expression<Func<T, bool>> predicate)
         {
             using (var scope = Container.BeginLifetimeScope())
             {
                 var tScope = scope.Resolve<U>();
 
-                return await tScope.GetFirst(predicate);
+                return tScope.GetFirst(predicate);
             }
         }
 
@@ -89,7 +89,7 @@ namespace Service
                     tScope.AddIfNew(item);
                 }
 
-                await tScope.Save();
+                 tScope.Save();
             }
         }
     }

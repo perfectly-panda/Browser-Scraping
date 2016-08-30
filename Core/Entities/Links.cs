@@ -19,13 +19,12 @@ namespace Core.Entities
             this.Webpage = webpage;
         }
 
-
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
 
         public Guid WebpageId { get; set; }
 
-        [Required]
-        public Webpage Webpage { get; set; }
+        public virtual Webpage Webpage { get; set; }
 
         [Required]
         public string URL { get; set; }

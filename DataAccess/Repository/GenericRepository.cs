@@ -61,11 +61,11 @@ namespace DataAccess.Repository
             DbContext.Entry(item).State = EntityState.Modified;
         }
 
-        public async Task Save()
+        public void Save()
         {
             try
             {
-                await DbContext.SaveChangesAsync();
+                DbContext.SaveChanges();
             }
             catch (System.Data.Entity.Validation.DbEntityValidationException dbEx)
             {
@@ -91,9 +91,9 @@ namespace DataAccess.Repository
             return DbContext.Set<T>().Get(predicate);
         }
 
-        public async Task<T> GetFirst(Expression<Func<T, bool>> predicate)
+        public T GetFirst(Expression<Func<T, bool>> predicate)
         {
-            return await DbContext.Set<T>().Get(predicate).FirstOrDefaultAsync();
+            return  DbContext.Set<T>().Get(predicate).FirstOrDefault();
         }
 
         public T Create()
