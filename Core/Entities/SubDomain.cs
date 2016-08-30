@@ -13,7 +13,7 @@ namespace Core.Entities
         public string Domain { get; set; }
 
         public Guid WebsiteId { get; set; }
-        public Website Website { get; set; }
+        public virtual Website Website { get; set; }
 
         public virtual List<Webpage> Webpages { get; set; }
     }

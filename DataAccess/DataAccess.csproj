@@ -63,49 +63,9 @@
     <Compile Include="Configurations\WebsiteConfiguration.cs" />
     <Compile Include="Extensions.cs" />
     <Compile Include="IDbContext.cs" />
-    <Compile Include="Migrations\201608160134065_ReInitializeDB.cs" />
-    <Compile Include="Migrations\201608160134065_ReInitializeDB.Designer.cs">
-      <DependentUpon>201608160134065_ReInitializeDB.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201608231858438_update.cs" />
-    <Compile Include="Migrations\201608231858438_update.Designer.cs">
-      <DependentUpon>201608231858438_update.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201608232142277_Jobs.cs" />
-    <Compile Include="Migrations\201608232142277_Jobs.Designer.cs">
-      <DependentUpon>201608232142277_Jobs.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201608240122463_subdomainEmpty.cs" />
-    <Compile Include="Migrations\201608240122463_subdomainEmpty.Designer.cs">
-      <DependentUpon>201608240122463_subdomainEmpty.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201608251846149_subdomainCascade.cs" />
-    <Compile Include="Migrations\201608251846149_subdomainCascade.Designer.cs">
-      <DependentUpon>201608251846149_subdomainCascade.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201608251852235_webpageRelationships.cs" />
-    <Compile Include="Migrations\201608251852235_webpageRelationships.Designer.cs">
-      <DependentUpon>201608251852235_webpageRelationships.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201608251924074_configFiles.cs" />
-    <Compile Include="Migrations\201608251924074_configFiles.Designer.cs">
-      <DependentUpon>201608251924074_configFiles.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201608252107399_nullDateTime.cs" />
-    <Compile Include="Migrations\201608252107399_nullDateTime.Designer.cs">
-      <DependentUpon>201608252107399_nullDateTime.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201608252111044_fkFix.cs" />
-    <Compile Include="Migrations\201608252111044_fkFix.Designer.cs">
-      <DependentUpon>201608252111044_fkFix.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201608271043123_wordCount.cs" />
-    <Compile Include="Migrations\201608271043123_wordCount.Designer.cs">
-      <DependentUpon>201608271043123_wordCount.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201608271051029_links.cs" />
-    <Compile Include="Migrations\201608271051029_links.Designer.cs">
-      <DependentUpon>201608271051029_links.cs</DependentUpon>
+    <Compile Include="Migrations\201608271245015_reinitializzeDB.cs" />
+    <Compile Include="Migrations\201608271245015_reinitializzeDB.Designer.cs">
+      <DependentUpon>201608271245015_reinitializzeDB.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Repository\GenericRepository.cs" />
@@ -119,6 +79,7 @@
     <Compile Include="Repository\Interfaces\IWordCountRepository.cs" />
     <Compile Include="Repository\Interfaces\IWebsiteRepository.cs" />
     <Compile Include="Repository\Interfaces\IWebPageRepository.cs" />
+    <Compile Include="Repository\WordCountRepository.cs" />
     <Compile Include="Repository\LinksRepository.cs" />
     <Compile Include="Repository\WebpageKeywordRepository .cs" />
     <Compile Include="Repository\KeywordRepository.cs" />
@@ -137,45 +98,15 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201608160134065_ReInitializeDB.resx">
-      <DependentUpon>201608160134065_ReInitializeDB.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608231858438_update.resx">
-      <DependentUpon>201608231858438_update.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608232142277_Jobs.resx">
-      <DependentUpon>201608232142277_Jobs.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608240122463_subdomainEmpty.resx">
-      <DependentUpon>201608240122463_subdomainEmpty.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608251846149_subdomainCascade.resx">
-      <DependentUpon>201608251846149_subdomainCascade.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608251852235_webpageRelationships.resx">
-      <DependentUpon>201608251852235_webpageRelationships.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608251924074_configFiles.resx">
-      <DependentUpon>201608251924074_configFiles.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608252107399_nullDateTime.resx">
-      <DependentUpon>201608252107399_nullDateTime.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608252111044_fkFix.resx">
-      <DependentUpon>201608252111044_fkFix.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608271043123_wordCount.resx">
-      <DependentUpon>201608271043123_wordCount.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608271051029_links.resx">
-      <DependentUpon>201608271051029_links.cs</DependentUpon>
-    </EmbeddedResource>
-  </ItemGroup>
-  <ItemGroup>
     <ProjectReference Include="..\Core\Core.csproj">
       <Project>{46a2ec54-0f04-4d2f-b52b-3d66a17089f1}</Project>
       <Name>Core</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201608271245015_reinitializzeDB.resx">
+      <DependentUpon>201608271245015_reinitializzeDB.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

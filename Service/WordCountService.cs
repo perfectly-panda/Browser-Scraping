@@ -19,7 +19,7 @@ namespace Service
 
                 item = tScope.AddIfNew(item);
 
-                await tScope.Save();
+                tScope.Save();
 
                 return item;
             }

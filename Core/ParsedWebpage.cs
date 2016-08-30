@@ -68,14 +68,26 @@ namespace Core
 
         public PageType PageType { get; set; }
 
-        public List<string> TextAsList { get; set; }
+        private List<string> _textAsList { get; set; }
+        public List<string> TextAsList
+        {
+            get
+            {
+                if (_textAsList == null)
+                {
+                    _textAsList = TextList.CreateTextList(this.InjectedDocument);
+                }
+
+                return _textAsList;
+            }
+        }
 
         public int WordCount
         {
             get {
                 if(TextAsList == null)
                 {
-                    TextAsList = TextList.CreateTextList(this.InjectedDocument);
+                    _textAsList = TextList.CreateTextList(this.InjectedDocument);
                 }
 
                 return TextAsList.Count;

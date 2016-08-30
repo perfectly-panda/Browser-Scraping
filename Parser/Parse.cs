@@ -83,6 +83,10 @@ namespace Parser
 
             SaveWebpage();
 
+            SaveLinks();
+            SaveWordCounts();
+
+            SetupTasks();
         }
 
         private async Task SaveWebsite()
@@ -128,6 +132,33 @@ namespace Parser
             this.Webpage = await WebpageService.Add(webpage);
         }
 
+        private async Task SaveWordCounts() {
+            CheckWebpage();
+
+            List<WordCount> wordcounts = new List<WordCount>();
+
+            foreach(var item in this.ParsedWebpage.TextAsList)
+            {
+                if(wordcounts.Any(w => w.Value == item))
+                {
+                    wordcounts.Where(w => w.Value == item).FirstOrDefault().Count++;
+                }
+                else
+                {
+                    wordcounts.Add(new WordCount(item, 1, this.Webpage));
+                }
+            }
+
+            await WordCountService.AddList(wordcounts);
+        }
+
+        private async Task SaveLinks()
+        {
+
+        }
+
+        private async Task SetupTasks() { }
+
         private async Task CheckWebsite()
         {
             if (this.Website == null || this.Website.Id == null || this.Website.Id == Guid.Empty)
@@ -140,7 +171,7 @@ namespace Parser
         {
             if (this.SubDomain == null || this.SubDomain.Id == null || this.SubDomain.Id == Guid.Empty)
             {
-                this.SubDomain = await SubDomainService.GetFirst(s=>s.Website.Id == this.Website.Id && s.Domain == this.SubDomain.Domain);
+                this.SubDomain =  SubDomainService.GetFirst(s=>s.Website.Id == this.Website.Id && s.Domain == this.SubDomain.Domain);
             }
         }
 
@@ -148,7 +179,7 @@ namespace Parser
         {
             if (this.Webpage == null || this.Webpage.Id == null || this.Webpage.Id == Guid.Empty)
             {
-                this.Webpage = await WebpageService.GetFirst(s => s.Website.Id == this.Website.Id && s.SubDomain.Id == this.SubDomain.Id && s.Url == this.Webpage.Url);
+                this.Webpage =  WebpageService.GetFirst(s => s.WebsiteId == this.Website.Id && s.SubDomainId == this.SubDomain.Id && s.Url == this.Webpage.Url);
             }
         }
 

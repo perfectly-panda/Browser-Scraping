@@ -13,7 +13,7 @@ namespace DataAccess.Repository
 
         IEnumerable<T> Get(Expression<Func<T, bool>> predicate);
 
-        Task<T> GetFirst(Expression<Func<T, bool>> predicate);
+        T GetFirst(Expression<Func<T, bool>> predicate);
 
         void Add(T item);
 
@@ -29,6 +29,6 @@ namespace DataAccess.Repository
 
         T FindById(Guid id);
 
-        Task Save();
+        void Save();
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -18,10 +19,11 @@ namespace Core.Entities
             this.Webpage = webpage;
         }
 
+        [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public Guid Id { get; set; }
 
         public Guid WebpageId { get; set; }
-        public Webpage Webpage { get; set; }
+        public virtual Webpage Webpage { get; set; }
 
         public string Value { get; set; }
         public int Count { get; set; }
